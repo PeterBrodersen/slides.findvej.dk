@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="../dist/reset.css">
+	<link rel="stylesheet" href="../dist/reveal.css">
+	<link rel="stylesheet" href="../dist/theme/sky.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="../plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-auto-animate>
+				<h1 class="r-fit-text">Flotte 3D-bygninger i QGIS og Blender</h1>
+				<p>Peter Brodersen, Septima</p>
+				<p>QGIS-brugermøde, 29. april 2024</p>
+			</section>
+			<section data-auto-animate>
+				<h1 class="r-fit-text">Flotte 3D-bygninger i QGIS og Blender</h1>
+			</section>
+			<section>
+				<h2 class="r-fit-text">Peter Brodersen</h2>
+				<ul>
+					<li>Udvikler hos Septima</li>
+					<li>Aktiv i OpenStreetMap- og Wikipedia-miljøet</li>
+					<li class="fragment">… og på ingen måde 3D-grafiker!</li>
+
+				</ul>
+			</section>
+			<section>
+				<h1 class="r-fit-text">Vi skal kigge på …</h1>
+				<ol>
+					<li>3D-bygninger
+						<ul>
+							<li>OpenStreetMap</li>
+							<li>Google Photorealistic 3D Tiles API</li>
+						</ul>
+
+					</li>
+
+					<li>QGIS</li>
+					<li>Blender</li>
+				</ol>
+			</section>
+			<section>
+				<h1>Hvad kan vi?</h1>
+				<p class="fragment">Eksempler.</p>
+			</section>
+		</div>
+	</div>
+
+	<script src="../dist/reveal.js"></script>
+	<script src="../plugin/notes/notes.js"></script>
+	<script src="../plugin/markdown/markdown.js"></script>
+	<script src="../plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			transition: 'convex',
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
