@@ -75,10 +75,41 @@
 				</section>
 			</section>
 			<section>
-				<section>
+				<section data-auto-animate>
 					<h1>Blender</h1>
 				</section>
+				<section data-auto-animate>
+					<h1>Blender</h1>
+					<ul>
+						<li>Open Source 3D-software <span class="fragment">(m.m.)</span></li>
+						<li class="fragment">Første udgave: 1994
+							<ul><li class="fragment">"Free Blender-kampagne" i juli 2002<span class="fragment"><br>(samme måned som første udgave af QGIS!)</span></li></ul>
+						</li>
+						<li class="fragment">Download: <a href="https://www.blender.org/">www.blender.org</a></li>
+					</ul>
+				</section>
+				<section>
+					<h1 class="r-fit-text">Blender: Filtyper</h1>
+					<ul>
+						<li class="fragment">Eget filformat</li>
+						<li class="fragment">3D-formater (.obj, .stl)</li>
+						<li class="fragment">Vektor (.svg)</li>
+						<li class="fragment">AutoCAD (.dxf gennem frit add-on)</li>
+						<li class="fragment">Punktskyer (ved <a href="https://blogs.gre.ac.uk/designsupport/3d-realisation/laser-scanning/meshlab-point-cloud-to-mesh/">konvertering til mesh</a> i MeshLab)</a></li>
+					</ul>
+				</section>
+				<section>
+					<h1 class="r-fit-text">Blender: Blosm</h1>
+					<ul>
+						<li class="fragment">Gratis add-on til import af GIS-relaterede datasæt</li><ul>
+							<li class="fragment">Google Maps' Photorealistic 3D Tiles</li>
+							<li class="fragment">OpenStreetMap-data (online + .osm)</li>
+							<li class="fragment">GPX tracks</li>
+						</ul></li>
+					</ul>
+				</section>
 			</section>
+
 			<section>
 				<blockquote>
 					Fred er at skabe
@@ -90,8 +121,46 @@
 				<h2>Tak fordi I er til!</h2>
 				<h3>Mail: peter@septima.dk</h3>
 				<h3>Twitter: <a href="https://twitter.com/peterbrodersen">@peterbrodersen</a></h3>
-				<h3>Slides kan hentes på <a href="https://slides.findvej.dk/">slides.findvej.dk</a></h3>
-				<h3>Spørgsmål?</h3>
+				<h3>Slides kan hentes på <a href="https://slides.findvej.dk/">slides.findvej.dk</a> <sup style="font-size: 0.6em;">(<a href="https://github.com/PeterBrodersen/slides.findvej.dk">GitHub</a>)</sup></h3>
+				<h3 class="fragment">Spørgsmål?</h3>
+			</section>
+
+			<section>
+				<section>
+					<h1>Links</h1>
+					<ul>
+						<li><a href="https://developers.google.com/maps/documentation/tile/3d-tiles">Google Photorealistic 3D Tiles API</a>
+							<ul>
+								<li><a href="https://console.cloud.google.com/billing">Opret billing-konto</a></li>
+								<li><a href="https://console.cloud.google.com/projectselector2/google/maps-apis/credentials">Opret projekt + API-nøgle</a></li>
+							</ul>
+						</li>
+						<li><a href="https://prochitecture.gumroad.com/l/blender-osm">Blosm</a>
+							<ul>
+								<li><a href="https://github.com/vvoovv/blosm/wiki/Documentation">Dokumentation</a></li>
+								<li><a href="https://github.com/vvoovv/blosm/wiki/Import-of-Google-3D-Cities">Import af Google 3D Cities</a></li>
+								<li><a href="https://prochitecture.gumroad.com/l/blender-osm">Download fra GumRoad</a> <span style="font-size: 0.7em;">(gratis; ingen login krævet)</span></li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Hints</h1>
+					<ul>
+						<li>QGIS, 3D Map
+							<ul>
+								<li>Aktivér og sæt Project Full Extent, fx til Map Canvas Extent</li>
+							</ul>
+						</li>
+						<li>Blender, view distance
+							<ul>
+								<li>Viewport: "View"-faneblad, over Blosm-faneblad. Øg "End" til fx 100000 m</li>
+								<li>Kamera: Sæt Clip End til fx 100000 m</li>
+							</ul>
+						</li>
+
+					</ul>
+				</section>
 			</section>
 			<!--
 				<h1>Men hvad med ...</h1>
@@ -99,10 +168,10 @@
 				Lav kvalitet, DWG er ikke lige så import-venligt.
 
 				Øvrigt:
-				Blender, 1994, i juli 2002: "Free Blender"-kampagne. Samme måned som første QGIS-release.
 				QGIS-animation. Timeline?
 				Animation af Septima-tekst, metallisk, fysik
 				Vand-animation
+				Oste-animation
 			-->
 		</div>
 	</div>
