@@ -18,7 +18,7 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
-			<section data-auto-animate>
+			<section data-auto-animate data-background-image="img/3D_QGIS.jpg" data-background-opacity="0.2">
 				<h1 class="r-fit-text">Flotte 3D-bygninger i QGIS og Blender</h1>
 				<p>Peter Brodersen, Septima</p>
 				<p>QGIS-brugermøde, 29. april 2024</p>
@@ -32,7 +32,6 @@
 					<li>Udvikler hos Septima</li>
 					<li>Aktiv i OpenStreetMap- og Wikipedia-miljøet</li>
 					<li class="fragment">… og på ingen måde 3D-grafiker!</li>
-
 				</ul>
 			</section>
 			<section>
@@ -43,7 +42,6 @@
 							<li>OpenStreetMap</li>
 							<li>Google Photorealistic 3D Tiles API</li>
 						</ul>
-
 					</li>
 
 					<li>QGIS</li>
@@ -58,29 +56,49 @@
 				<section data-background-image="img/3D_QGIS.jpg">
 					<div
 						style="position: absolute; left: 0; top: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
-						QGIS</div>
+						QGIS
+					</div>
+					<aside class="notes">
+						København. Veje samt monumenter fra Københavns Kommunes monumentdatabase.
+					</aside>
 				</section>
 				<section data-background-image="img/3D_Blender_Odense.jpg">
 					<div
 						style="position: absolute; left: 0; top: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
-						Blender</div>
+						Blender
+					</div>
+					<aside class="notes">
+						Odense Banegård Center. Egentligt 3D-miljø (lys, skygger, raytracing, fysik-engine)
+					</aside>
 				</section>
-				<section data-background-image="img/3D_Blender_Screenshot.jpg">
+				<section data-background-image="img/3D_Blender.jpg" data-background-size="contain">
 					<div
 						style="position: absolute; left: 0; top: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
-						Blender</div>
+						Blender
+					</div>
+					<aside class="notes">
+						Christiansborg. Skygger, veje og områder som meshes. Lidt af Børsen er med; 3D fra før branden.
+					</aside>
 				</section>
 				<section>
 					<div
 						style="position: absolute; left: 0; top: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
-						QGIS</div>
+						QGIS
+					</div>
 					<video data-autoplay src="img/Aarhus_Traffic_Lights.mp4"></video>
+					<aside class="notes">
+						Skygger m.m. er flaky. Ikke noget nyt for folk, der har arbejdet med point clouds. Tiles i loop: Options, 3D, Graphics Memory, Allowed Memory per map layer - hæv værdien til et par GB.
+					</aside>
 				</section>
 				<section>
 					<div
 						style="position: absolute; left: 0; top: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
-						Blender</div>
+						Blender
+					</div>
 					<video data-autoplay src="img/Blosm_Thorvaldsen_Jupiter_60fps.mp4"></video>
+					<aside class="notes">
+						Fysik, fake vand. Thorvaldsens Museum stiller digitale 3D-figurer til rådighed under CC0. "Ganymedes med Jupiters ørn", ørnen alene som model.
+					</aside>
 				</section>
 			</section>
 			<section>
@@ -90,15 +108,31 @@
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Offentligt tilgængelige 3D-bygninger</h1>
 					<h2 class="r-fit-text"><a href="https://developers.google.com/maps/documentation/tile/3d-tiles">Google Photorealistic 3D Tiles</a></h2>
-					<div>
+					<div class="r-stretch">
 						<img src="img/Google_Photorealistic_Screenshot.png">
 					</div>
+					<aside class="notes">
+						Google Maps har API, hvor de tilbyder Photorealistic 3D tiles. Dette er 3D-meshes for bygninger i høj kvalitet. Tjenesten er pt. (april 2024) gratis at bruge i den aktuelle preview-fase.
+					</aside>
 				</section>
 				<section>
 					<h2 class="r-fit-text"><a href="https://console.cloud.google.com/projectselector2/google/maps-apis/credentials?pli=1">Opret projekt og API-nøgle</a></h2>
-					<div>
+					<div class="r-stretch">
 						<img src="img/Google_API_Key.png">
 					</div>
+					<aside class="notes">
+						Alternativ for QGIS: Cesium Ion-plugin, hvis man ikke vil oprette en billing-konto.
+					</aside>
+				</section>
+				<section>
+					<h2 class="r-fit-text"><a href="https://console.cloud.google.com/projectselector2/google/maps-apis/credentials?pli=1">Googles dækning for Danmark</a></h2>
+					<div class="r-stretch">
+						<img src="img/Google_3D_Coverage_DK.png">
+					</div>
+					<aside class="notes">
+						Dækning for Danmark: Storkøbenhavn, Odense, Aarhus, Esbjerg, Vejle og Aalborg - markeret med gult. Desværre ikke Nyborg.
+						earth.google.com, Vis, Lag, 
+					</aside>
 				</section>
 				<section>
 					<h2 class="r-fit-text">Andre 3D-modeller?</h2>
@@ -108,7 +142,7 @@
 								<li class="fragment" data-fragment-index="2">OpenStreetMap</li>
 								<li class="fragment" data-fragment-index="3">Kommuner
 									<ul class="fragment" data-fragment-index="4">
-										<li>OpenData.dk<br><a href="https://www.opendata.dk/search?q=bymodel">"Bymodel"</a></li>
+										<li>OpenData.dk<br>Søg <a href="https://www.opendata.dk/search?q=bymodel">Bymodel</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -118,6 +152,9 @@
 						</div>
 						<div class="fragment" data-fragment-index="5"><img src="img/OpenData_Bymodel.png" width="75%"></div>
 					</div>
+					<aside class="notes">
+						Blender Blosm understøtter import af bygninger
+					</aside>
 				</section>
 			</section>
 			<section>
@@ -134,27 +171,39 @@
 				</section>
 				<section>
 					<h1 class="r-fit-text">Data Source Manager: Scene</h1>
-					<div>
+					<div class="r-stretch">
 						<img src="img/QGIS_DataSource_Scene.png">
 					</div>
+					<aside class="notes">
+						Indsæt URL med API-key. Det er det hele. Alternativt brug Cesium Ion-plugin. Husk at sætte "Project Full Extent" til begrænset område!
+					</aside>
 				</section>
 				<section>
 					<h1>3D Map</h1>
-					<div>
+					<div class="r-stretch">
 						<img src="img/QGIS_3D_Map.png">
 					</div>
+					<aside class="notes">
+						3D Map, under View, 3D Map Views. Vi kan indstille skygger, skybox, perspektiv, m.m. Ikke noget nyt her.
+					</aside>
 				</section>
 				<section>
 					<h1 class="r-fit-text">Layer: 3D View</h1>
-					<div>
+					<div class="r-stretch">
 						<img src="img/QGIS_Layer_3D_View.png">
 					</div>
+					<aside class="notes">
+						Vælg 3D-model. Primitiver eller .obj-fil (3D-fil). QGIS har nogle tilgængelige på https://plugins.qgis.org/wavefronts/
+					</aside>
 				</section>
 				<section>
 					<h1 class="r-fit-text">Export 3D Animation</h1>
-					<div>
+					<div class="r-stretch">
 						<img src="img/QGIS_Export_3D_Animation.png">
 					</div>
+					<aside class="notes">
+						Sæt keyframes. Eksportér til en række billeder; sammensæt i et vilkårligt animations-program.
+					</aside>
 				</section>
 			</section>
 			<section>
@@ -170,6 +219,9 @@
 						</li>
 						<li class="fragment">Download: <a href="https://www.blender.org/">www.blender.org</a></li>
 					</ul>
+					<aside class="notes">
+						Læringskurven i Blender kan være hård (ligesom for QGIS?). Du behøver dog ikke at kunne 3D-modellere.
+					</aside>
 				</section>
 				<section>
 					<h1 class="r-fit-text">Blender: Filtyper</h1>
@@ -180,9 +232,12 @@
 						<li class="fragment">AutoCAD (.dxf gennem frit add-on)</li>
 						<li class="fragment">Punktskyer (ved <a href="https://blogs.gre.ac.uk/designsupport/3d-realisation/laser-scanning/meshlab-point-cloud-to-mesh/">konvertering til mesh</a> i MeshLab)</a></li>
 					</ul>
+					<aside class="notes">
+						Eget filformat for data i modsætning til QGIS. AutoCAD: Ikke fantastisk understøttelse. Punktskyer: Andre programmer end Meshlab kan bruges.
+					</aside>
 				</section>
-				<section>
-					<h1 class="r-fit-text">Blender: Blosm</h1>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Blender: <a href="https://prochitecture.gumroad.com/l/blender-osm">Blosm</a></h1>
 					<ul>
 						<li class="fragment">Gratis add-on til import af GIS-relaterede datasæt</li><ul>
 							<li class="fragment">Google Maps' Photorealistic 3D Tiles</li>
@@ -190,8 +245,45 @@
 							<li class="fragment">GPX tracks</li>
 						</ul></li>
 					</ul>
+					<aside class="notes">
+						Plugin kan hentes gratis, kræver ikke login, betal hvad du vil.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Blender: <a href="https://prochitecture.gumroad.com/l/blender-osm">Blosm</a></h1>
+					<div class="r-stretch"><img src="img/Blender_Preferences.png"></div>
+					<aside class="notes">
+						Download, installér, indsæt API-nøgle
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Blender: <a href="https://prochitecture.gumroad.com/l/blender-osm">Blosm</a></h1>
+					<div class="r-stretch"><img src="img/Blosm_Import.png"></div>
+					<aside class="notes">
+						Vælg import (OpenStreetMap, Google 3D-bygninger, GPX, m.m. Højeste opløsning ("Buildings with more details") er tung.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Blender: <a href="https://prochitecture.gumroad.com/l/blender-osm">Blosm</a></h1>
+					<div class="r-stretch"><img src="img/Blosm_Area_Selection.png"></div>
+					<aside class="notes">
+						Vælg små områder! Fx 0,3x0,3 km^2 til begyndelse ved højeste opløsning ("Buildings with more details")
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Blender: <a href="https://prochitecture.gumroad.com/l/blender-osm">Blosm</a></h1>
+					<div class="r-stretch"><img src="img/Blender_Raytracing_Skygger.png"></div>
+					<aside class="notes">
+						Script til konvertering af materiale. Raytracing er tungt! Kræver dog ikke meget for bygninger med tekstur i sig selv. Tilføj selv vand.
+					</aside>
 				</section>
 			</section>
+			<section>
+				<h1 class="r-fit-text">Hvad vil I skabe?</h1>
+				<aside class="notes">
+					Segway til "Fred er at skabe", skift evt. over til programmerne, hands-on demo
+				</aside>
+		</section>
 
 			<section>
 				<blockquote>
@@ -206,6 +298,9 @@
 				<h3>Twitter: <a href="https://twitter.com/peterbrodersen">@peterbrodersen</a></h3>
 				<h3>Slides kan hentes på <a href="https://slides.findvej.dk/">slides.findvej.dk</a> <sup style="font-size: 0.6em;">(<a href="https://github.com/PeterBrodersen/slides.findvej.dk">GitHub</a>)</sup></h3>
 				<h3 class="fragment">Spørgsmål?</h3>
+				<aside class="notes">
+					Slides rummer også links, hints, m.m.
+				</aside>
 			</section>
 
 			<section>
@@ -230,6 +325,12 @@
 				<section>
 					<h1>Hints</h1>
 					<ul>
+						<li>
+							3D Map Tiles
+							<ul>
+								<li>Husk at <a href="https://console.cloud.google.com/projectselector2/apis/library/tile.googleapis.com">aktivere brugen af Map Tiles API</a></li>
+							</ul>
+						</li>
 						<li>QGIS, 3D Map
 							<ul>
 								<li>Aktivér og sæt Project Full Extent, fx til Map Canvas Extent</li>
@@ -241,9 +342,10 @@
 								<li>Kamera: Sæt Clip End til fx 100000 m</li>
 							</ul>
 						</li>
-
 					</ul>
 				</section>
+			</section>
+			<section data-background-image="img/Ruben.jpg">
 			</section>
 		</div>
 	</div>
