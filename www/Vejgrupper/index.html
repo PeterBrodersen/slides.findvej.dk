@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Grupper af vejnavne fundet ved brug af OpenStreetMap og Wikidata</title>
+
+	<link rel="stylesheet" href="../dist/reset.css">
+	<link rel="stylesheet" href="../dist/reveal.css">
+	<link rel="stylesheet" href="../dist/theme/sky.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="../plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1 class="r-fit-text">Grupper af vejnavne</h1>
+				<h2 class="r-fit-text">fundet ved brug af OpenStreetMap og Wikidata</h2>
+				<p>Peter Brodersen, Septima</p>
+				<p>September 2024</p>
+			</section>
+			<section>
+				<section>
+					<h1 class="r-fit-text">Netværk af veje</h1>
+					<h2 class="fragment">Opkaldt efter</h2>
+					<ul>
+						<li class="fragment">Kvinder</li>
+						<li class="fragment">Mænd</li>
+						<li class="fragment">Digtere</li>
+						<li class="fragment">Mandlige politikere og slagtere født i Aarhus før 1864, hvor mindst én af
+							forældrene er maler</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Kvinder</h2>
+					<div class="r-stretch">
+						<img src="img/kvinder.png">
+					</div>
+				</section>
+				<section>
+					<h2>Mænd</h2>
+					<div class="r-stretch">
+						<img src="img/mænd.png">
+					</div>
+				</section>
+				<section>
+					<h2>Digtere</h2>
+					<div class="r-stretch">
+						<img src="img/digtere.jpg">
+					</div>
+				</section>
+			</section>
+			<section>
+				<section data-auto-animate>
+					<h2>Resultater</h2>
+				</section>
+				<section data-auto-animate>
+					<h2>Resultater</h2>
+					<h3>Største træ</h3>
+					<ul class="fragment">
+						<li>Kvinder: Næstved, 7 km samlet</li>
+						<li>Mænd: København, 79 km samlet</li>
+						<li>Digtere: Aarhus, 20 km samlet</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h2>Resultater</h2>
+					<h3>Total vejlængde i Danmark</h3>
+					<ul class="fragment">
+						<li>Kvinder: 325 km</li>
+						<li>Mænd: 1.935 km</li>
+						<li class="fragment">Hankønsdyr: 5 km
+							<ul class="fragment">
+								<li>Hankønsdyr? <a href="Q27688665">Bambi</a>, <a
+										href="https://www.wikidata.org/wiki/Q182560">Fenrisulven</a>, <a
+										href="https://www.wikidata.org/wiki/Q2418385">Grane</a> og <a
+										href="https://www.wikidata.org/wiki/Q162797">Pegasus</a></li>
+								<li class="fragment">Wikidata skelner imellem mænd, kvinder, hankøn og hunkøn</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section data-auto-animate>
+					<h2>Kode</h2>
+				</section>
+				<section data-auto-animate>
+					<h2>Kode</h2>
+					<h3>Kun to Postgres-tabeller</h3>
+					<ul class="fragment">
+						<li>OpenStreetMap
+							<ul class="fragment">
+								<li>Geometri</li>
+								<li>Reference til Wikidata</li>
+							</ul>
+						</li>
+						<li class="fragment">Wikidata
+							<ul class="fragment">
+								<li>JSON!</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3>Kode</h3>
+					<pre>
+						<code class="hljs sql" data-trim data-line-numbers="|2|7|" style="font-size: 0.7em;">
+							WITH trees AS (
+								SELECT unnest(ST_ClusterIntersecting(geom)) AS tree
+								FROM osmetymology.osm_ways ow 
+								INNER JOIN osmetymology.wikidata w ON ow."name:etymology:wikidata" = w.itemid 
+							--	WHERE w.claims->'P21'->0->'mainsnak'->'datavalue'->'value'->>'id' = 'Q6581072' -- Kvinder
+							--	WHERE w.claims->'P21'->0->'mainsnak'->'datavalue'->'value'->>'id' = 'Q6581097' -- Mænd
+							  WHERE w.claims @@ '$.P106[*].mainsnak.datavalue.value.id == "Q49757"' -- Digtere
+							)
+							SELECT
+								ST_NPoints(tree) AS points,
+								ST_NumGeometries(tree) AS geometries,
+								ST_Length(tree) AS length,
+								ST_CollectionExtract(tree) AS geom,
+								ROW_NUMBER () OVER (ORDER BY tree)
+							FROM trees
+							ORDER BY points DESC
+							LIMIT 1
+						</code>
+					</pre>
+				</section>
+			</section>
+			<section>
+				<section data-auto-animate>
+					<h3>Inspiration</h3>
+				</section>
+				<section data-auto-animate>
+					<h3>Inspiration</h3>
+					<ul>
+						<li><a href="https://en.wikipedia.org/wiki/Shortest_path_problem#All-pairs_shortest_paths">Længste
+								shortest path</a>
+							<ul>
+								<li><a href="https://docs.pgrouting.org/latest/en/pgr_floydWarshall.html">pgRouting
+										understøtter Floyd–Warshall-algoritmen</a> direkte</li>
+							</ul>
+						</li>
+						<li class="fragment">Opsummering på andet end samlet længde
+							<ul>
+								<li><a href="https://en.wikipedia.org/wiki/Distance_(graph_theory)#diameter">Diameter
+										for en graf</a></li>
+							</ul>
+						</li>
+						<li class="fragment">… og så kan det bruges til politisk debat!</li>
+					</ul>
+				</section>
+			</section>
+			<section data-background-color="black">
+
+			</section>
+			<section>
+				<section data-auto-animate>
+					<h3>Datagrundlag</h3>
+					<p class="fragment">(stop eventuelt her!)</p>
+				</section>
+				<section data-auto-animate>
+					<h3>Datagrundlag</h3>
+					<h3>OpenStreetMap</h3>
+					<ul class="fragment">
+						<li>Vejgeometri</li>
+						<li>Navn</li>
+						<li>Etymologi
+							<ul class="fragment">
+								<li>Fritekst</li>
+								<li>Wikipedia-artikel</li>
+								<li><span class="fragment highlight-red">Wikidata-emne</span></li>
+							</ul>
+						</li>
+					</ul>
+					<p class="fragment">Angivet for knap 30.000 veje i Danmark!</p>
+				</section>
+				<section data-auto-animate>
+					<h3>Datagrundlag</h3>
+					<h3>OpenStreetMap</h3>
+					<p><img src="img/Helle_Godtveds_Plads.png"></p>
+				</section>
+				<section data-auto-animate>
+					<h3>Datagrundlag</h3>
+					<h3>OpenStreetMap</h3>
+					<p><a href="https://www.openstreetmap.org/way/1012135275">Helle Gotveds Plads</a></p>
+					<table style="font-size: 0.7em;">
+						<thead>
+							<tr>
+								<th>Key</th>
+								<th>Value</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>name</th>
+								<td>Helle Gotveds Plads</td>
+							</tr>
+							<tr>
+								<td>name:etymology:wikidata</th>
+								<td><a href="https://www.wikidata.org/wiki/Q12316068"
+										class="fragment highlight-red">Q12316068</a></td>
+							</tr>
+							<tr>
+								<td>place</th>
+								<td>square</td>
+							</tr>
+							<tr>
+								<td>wikidata</th>
+								<td><a href="https://www.wikidata.org/wiki/Q116860286">Q116860286</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section data-auto-animate>
+					<h3>Datagrundlag</h3>
+					<h3>Wikidata</h3>
+					<p class="fragment">Wikidata er emner med data som key⇒value</p>
+					<p class="fragment"><em>Helle Gotved</em> (<a
+							href="https://www.wikidata.org/wiki/Q12316068">Q12316068</a>):</p>
+					<table class="fragment" style="font-size: 0.6em;">
+						<tr>
+							<td><em>tilfælde af</em> <sub style="font-size: 0.3em;">P31</sub></td>
+							<td><em>menneske</em> <sub style="font-size: 0.3em;">Q5</sub></td>
+						</tr>
+						<tr>
+							<td><em>køn</em> <sub style="font-size: 0.3em;">P21</sub></td>
+							<td><em>kvinde</em> <sub style="font-size: 0.3em;">Q6581072</sub></td>
+						</tr>
+						<tr>
+							<td><em>beskæftigelse</em> <sub style="font-size: 0.3em;">P106</sub></td>
+							<td><em>gymnastiklærer</em> <sub style="font-size: 0.3em;">Q2312637</sub></td>
+						</tr>
+						<tr>
+							<td><em>beskæftigelse</em> <sub style="font-size: 0.3em;">P106</sub></td>
+							<td><em>forfatter</em> <sub style="font-size: 0.3em;">Q36180</sub></td>
+						</tr>
+						<tr>
+							<td><em>beskæftigelse</em> <sub style="font-size: 0.3em;">P106</sub></td>
+							<td><em>gymnast</em> <sub style="font-size: 0.3em;">Q16947675</sub></td>
+						</tr>
+						<tr>
+							<td>…</td>
+							<td>…</td>
+						</tr>
+					</table>
+				</section>
+				<section data-auto-animate>
+					<h3>Datagrundlag</h3>
+					<h3>PostgreSQL og PostGIS</h3>
+					<ul class="fragment">
+						<li>Import via <a href="https://github.com/PeterBrodersen/osmetymology">osmetymology</a>
+							<ul>
+								<li><code>osm2pgsql</code></li>
+								<li>Gruppering på navne, emner og kommuner</li>
+								<li>Wikidata-emner</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+	</div>
+
+	<script src="../dist/reveal.js"></script>
+	<script src="../plugin/notes/notes.js"></script>
+	<script src="../plugin/markdown/markdown.js"></script>
+	<script src="../plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			transition: 'slide',
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
