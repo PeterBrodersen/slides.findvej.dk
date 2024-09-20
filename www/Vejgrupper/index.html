@@ -27,13 +27,13 @@
 			<section>
 				<section>
 					<h1 class="r-fit-text">Netværk af veje</h1>
-					<h2 class="fragment">Opkaldt efter</h2>
+					<h2>Opkaldt efter</h2>
 					<ul>
-						<li class="fragment">Kvinder</li>
-						<li class="fragment">Mænd</li>
-						<li class="fragment">Digtere</li>
-						<li class="fragment">Mandlige politikere og slagtere født i Aarhus før 1864, hvor mindst én af
-							forældrene er maler</li>
+						<li>Kvinder</li>
+						<li>Mænd</li>
+						<li>Digtere</li>
+						<li>Mandlige politikere og slagtere født i Aarhus før 1864, hvor mindst én af
+							forældrene er maler …</li>
 					</ul>
 				</section>
 				<section>
@@ -41,18 +41,21 @@
 					<div class="r-stretch">
 						<img src="img/kvinder.png">
 					</div>
+					<p style="font-size: 0.5em;">Baggrundskort: Klimadatastyrelsen</p>
 				</section>
 				<section>
 					<h2>Mænd</h2>
 					<div class="r-stretch">
 						<img src="img/mænd.png">
 					</div>
+					<p style="font-size: 0.5em;">Baggrundskort: Klimadatastyrelsen</p>
 				</section>
 				<section>
 					<h2>Digtere</h2>
 					<div class="r-stretch">
 						<img src="img/digtere.jpg">
 					</div>
+					<p style="font-size: 0.5em;">Baggrundskort: Klimadatastyrelsen</p>
 				</section>
 			</section>
 			<section>
@@ -62,7 +65,7 @@
 				<section data-auto-animate>
 					<h2>Resultater</h2>
 					<h3>Største træ</h3>
-					<ul class="fragment">
+					<ul>
 						<li>Kvinder: Næstved, 7 km samlet</li>
 						<li>Mænd: København, 79 km samlet</li>
 						<li>Digtere: Aarhus, 20 km samlet</li>
@@ -71,7 +74,7 @@
 				<section data-auto-animate>
 					<h2>Resultater</h2>
 					<h3>Total vejlængde i Danmark</h3>
-					<ul class="fragment">
+					<ul>
 						<li>Kvinder: 325 km</li>
 						<li>Mænd: 1.935 km</li>
 						<li class="fragment">Hankønsdyr: 5 km
@@ -80,7 +83,7 @@
 										href="https://www.wikidata.org/wiki/Q182560">Fenrisulven</a>, <a
 										href="https://www.wikidata.org/wiki/Q2418385">Grane</a> og <a
 										href="https://www.wikidata.org/wiki/Q162797">Pegasus</a></li>
-								<li class="fragment">Wikidata skelner imellem mænd, kvinder, hankøn og hunkøn</li>
+								<li>Wikidata skelner imellem mænd, kvinder, hankøn og hunkøn</li>
 							</ul>
 						</li>
 					</ul>
@@ -88,21 +91,21 @@
 			</section>
 			<section>
 				<section data-auto-animate>
-					<h2>Kode</h2>
+					<h3>Kode</h3>
 				</section>
 				<section data-auto-animate>
-					<h2>Kode</h2>
+					<h3>Kode</h3>
 					<h3>Kun to Postgres-tabeller</h3>
 					<ul class="fragment">
 						<li>OpenStreetMap
-							<ul class="fragment">
+							<ul>
 								<li>Geometri</li>
 								<li>Reference til Wikidata</li>
 							</ul>
 						</li>
 						<li class="fragment">Wikidata
-							<ul class="fragment">
-								<li>JSON!</li>
+							<ul>
+								<li>JSON-data!</li>
 							</ul>
 						</li>
 					</ul>
@@ -179,13 +182,10 @@
 					</ul>
 				</section>
 			</section>
-			<section data-background-color="black">
-
-			</section>
 			<section>
 				<section data-auto-animate>
 					<h3>Datagrundlag</h3>
-					<p class="fragment">(stop eventuelt her!)</p>
+					<p>(for de teknisk interesserede)</p>
 				</section>
 				<section data-auto-animate>
 					<h3>Datagrundlag</h3>
@@ -201,16 +201,16 @@
 							</ul>
 						</li>
 					</ul>
-					<p class="fragment">Angivet for knap 30.000 veje i Danmark!</p>
+					<p class="fragment">Ophav til vejnavn er angivet for knap 30.000 veje i Danmark!</p>
 				</section>
 				<section data-auto-animate>
 					<h3>Datagrundlag</h3>
-					<h3>OpenStreetMap</h3>
+					<h3>OpenStreetMap - eksempel</h3>
 					<p><img src="img/Helle_Godtveds_Plads.png"></p>
 				</section>
 				<section data-auto-animate>
 					<h3>Datagrundlag</h3>
-					<h3>OpenStreetMap</h3>
+					<h3>OpenStreetMap - eksempel</h3>
 					<p><a href="https://www.openstreetmap.org/way/1012135275">Helle Gotveds Plads</a></p>
 					<table style="font-size: 0.7em;">
 						<thead>
@@ -248,24 +248,34 @@
 							href="https://www.wikidata.org/wiki/Q12316068">Q12316068</a>):</p>
 					<table class="fragment" style="font-size: 0.6em;">
 						<tr>
-							<td><em>tilfælde af</em> <sub style="font-size: 0.3em;">P31</sub></td>
-							<td><em>menneske</em> <sub style="font-size: 0.3em;">Q5</sub></td>
+							<td><em>tilfælde af</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Property:P31">P31</a></sub></td>
+							<td><em>menneske</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Q5">Q5</a></sub></td>
 						</tr>
 						<tr>
-							<td><em>køn</em> <sub style="font-size: 0.3em;">P21</sub></td>
-							<td><em>kvinde</em> <sub style="font-size: 0.3em;">Q6581072</sub></td>
+							<td><em>køn</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Property:P21">P21</a></sub></td>
+							<td><em>kvinde</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Q6581072">Q6581072</a></sub></td>
 						</tr>
 						<tr>
-							<td><em>beskæftigelse</em> <sub style="font-size: 0.3em;">P106</sub></td>
-							<td><em>gymnastiklærer</em> <sub style="font-size: 0.3em;">Q2312637</sub></td>
+							<td><em>beskæftigelse</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Property:P106">P106</a></sub></td>
+							<td><em>gymnastiklærer</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Q2312637">Q2312637</a></sub></td>
 						</tr>
 						<tr>
-							<td><em>beskæftigelse</em> <sub style="font-size: 0.3em;">P106</sub></td>
-							<td><em>forfatter</em> <sub style="font-size: 0.3em;">Q36180</sub></td>
+							<td><em>beskæftigelse</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Property:P106">P106</a></sub></td>
+							<td><em>forfatter</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Q36180">Q36180</a></sub></td>
 						</tr>
 						<tr>
-							<td><em>beskæftigelse</em> <sub style="font-size: 0.3em;">P106</sub></td>
-							<td><em>gymnast</em> <sub style="font-size: 0.3em;">Q16947675</sub></td>
+							<td><em>beskæftigelse</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Property:P106">P106</a></sub></td>
+							<td><em>gymnast</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Q16947675">Q16947675</a></sub></td>
 						</tr>
 						<tr>
 							<td>…</td>
@@ -286,6 +296,45 @@
 						</li>
 					</ul>
 				</section>
+				<section data-auto-animate>
+					<h3>Datagrundlag</h3>
+					<h4><a href="https://navne.findvej.dk/">navne.findvej.dk</a></h4>
+					<div><img src="img/navne_findvej_dk.png"></div>
+				</section>
+			</section>
+			<section>
+				<h3>Ressourcer</h3>
+				<ul>
+					<li><a href="https://www.openstreetmap.org/">OpenStreetMap</a>
+						<ul>
+							<li><a
+									href="https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata"><code>name:etymology:wikidata</code></a>
+								(<a
+									href="https://taginfo.geofabrik.de/europe:denmark/keys/name%3Aetymology%3Awikidata#chronology">kronologi</a>)
+							</li>
+						</ul>
+					</li>
+					<li><a href="https://www.wikidata.org/">Wikidata</a></li>
+					<li><a href="https://navne.findvej.dk/">navne.findvej.dk</a> (Hvad er steder opkaldt efter?)
+						<ul>
+							<li><a href="https://github.com/PeterBrodersen/osmetymology">osmetymology</a> (GitHub)</li>
+						</ul>
+					</li>
+					<li>
+						<a href="https://www.postgresql.org/">PostgreSQL</a>
+						<ul>
+							<li><a href="https://postgis.net/">PostGIS</a></li>
+							<li><a
+									href="https://postgis.net/docs/ST_ClusterIntersecting.html"><code>ST_ClusterIntersecting()</code></a>
+							</li>
+							<li><a
+									href="https://www.postgresql.org/docs/current/functions-json.html">jsonb-funktioner</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section data-background-image="../3DBygninger/img/Ruben.jpg">
 			</section>
 		</div>
 	</div>
