@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Stednavne fra OpenStreetMap og Wikidata</title>
+
+	<link rel="stylesheet" href="../dist/reset.css">
+	<link rel="stylesheet" href="../dist/reveal.css">
+	<link rel="stylesheet" href="../dist/theme/sky.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="../plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-auto-animate>
+				<h1 class="r-fit-text">Stednavne</h1>
+				<h2 class="r-fit-text">fra OpenStreetMap og Wikidata</h2>
+				<h3>Peter Brodersen, Septima</h3>
+				<h4>Klimadatastyrelsen, november 2024</h4>
+				<aside class="notes">
+					Inviteret ind forbi af Katarina Ritz efter opslag på LinkedIn
+				</aside>
+			</section>
+			<section>
+				<section data-auto-animate>
+					<h3>Peter Brodersen, Septima</h3>
+					<ul>
+						<li>Udvikler hos Septima P/S</li>
+						<li>Frivillig bruger på Wikipedia og OpenStreetMap</li>
+						<li>… og glad for data</li>
+					</ul>
+					<aside class="notes">
+						Findvej.dk, selvstændig<br>
+						Septima siden 2018<br>
+						Wikipedia siden 2004<br>
+						OpenStreetMap siden 2008, både professionelt og hobby
+					</aside>
+				</section>
+				<section>
+					<h3>Dagens emner</h3>
+					<ul>
+						<li>Etymologi i OpenStreetMap</li>
+						<li>Datagrundlag</li>
+						<li>Muligheder med struktureret data</li>
+						<li>Samarbejde om indhold</li>
+					</ul>
+				</section>
+				<aside class="notes">
+					Etymologi: Hvad er indholdet? Hvad er OpenStreetMap?<br>
+					Datagrundlag: Hvor kommer data fra? Biblioteksbesøg, fælder.<br>
+					Muligheder: Databaseopslag, m.m. Professioner, køn, etc.<br>
+					Samarbejde: Kan offentlige myndigheder opdatere OpenStreetMap?
+				</aside>
+			</section>
+			<section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Etymologi i OpenStreetMap</h1>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Etymologi i OpenStreetMap</h1>
+					<div>
+						<a href="https://navne.findvej.dk/"><img src="img/navne_findvej_dk_stockholmsgade.png"></a>
+					</div>
+					<aside class="notes">
+						Mit website.<br>
+						Samler OpenStreetMap- og Wikidata.<br>
+						PostgreSQL som database.<br>
+						Kode på GitHub.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Etymologi i OpenStreetMap</h1>
+					<h3>OpenStreetMap</h3>
+					<ul>
+						<li>Åbent og frit kort over hele verden</li>
+						<li>Oprettet og vedligeholdt af frivillige, m.m.</li>
+						<li>Både fysiske karakteristika og metadata</li>
+					</ul>
+					<aside class="notes">
+						Åben datalicens, kan bruges af alle, også kommercielt.<br>
+						Kan downloades!<br>
+						Virksomheder og myndigheder bidrager også.<br>
+						Fysisk karakteristika: Antal vejbaner, overfladebelægning<br>
+						Metadata: Fartgrænse, opførelsesår, etymologi
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Etymologi i OpenStreetMap</h1>
+					<div>
+						<a href="https://www.openstreetmap.org/node/11645658019#map=19/55.710801/12.564441">
+							<img src="img/klimadatastyrelsen.png">
+						</a>
+					</div>
+					<aside class="notes">
+						Punkter, linjer og relationer (samlinger)<br>
+						Alt består af etablerede key-value-sæt<br>
+						Klimadatastyrelsen kunne have "Klima" og "Data" som etymologiske emner.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Etymologi i OpenStreetMap</h1>
+					<h3>OpenStreetMap</h3>
+					<ul>
+						<li>Vejgeometri</li>
+						<li>Navn</li>
+						<li>Etymologi
+							<ul class="fragment">
+								<li>Fritekst</li>
+								<li>Wikipedia-artikel</li>
+								<li><span class="fragment highlight-red">Wikidata-emne</span></li>
+							</ul>
+						</li>
+					</ul>
+					<p class="fragment">Ophav til vejnavn er angivet for over 30.000 veje i Danmark!</p>
+					<aside class="notes">
+						En vej er alle vejstykker med samme navn og etymologi inden for en kommune<br>
+						(Gruppering på navne, emner og kommuner)<br>
+						OpenStreetMap er international. Bruger ikke kommune- og vejkoder<br>
+						Kommunegrænser kommer fra GeoDanmark: Kommuneomraade<br>
+						Kommunegrænser med buffer (aht. broer m.m.)<br>
+						Sjældent oplysninger om navngivningstidspunkt
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Etymologi i OpenStreetMap</h1>
+					<h3>OpenStreetMap - eksempel</h3>
+					<p><img src="img/Helle_Godtveds_Plads.png"></p>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Etymologi i OpenStreetMap</h1>
+					<h3>OpenStreetMap - eksempel</h3>
+					<p><a href="https://www.openstreetmap.org/way/1012135275">Helle Gotveds Plads</a></p>
+					<table style="font-size: 0.7em;">
+						<thead>
+							<tr>
+								<th>Key</th>
+								<th>Value</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>name</th>
+								<td>Helle Gotveds Plads</td>
+							</tr>
+							<tr>
+								<td>name:etymology:wikidata</th>
+								<td><a href="https://www.wikidata.org/wiki/Q12316068"
+										class="fragment highlight-red">Q12316068</a></td>
+							</tr>
+							<tr>
+								<td>place</th>
+								<td>square</td>
+							</tr>
+							<tr>
+								<td>wikidata</th>
+								<td><a href="https://www.wikidata.org/wiki/Q116860286">Q116860286</a></td>
+							</tr>
+						</tbody>
+					</table>
+					<aside class="notes">
+						Referencer fra OpenStreetMap-værdier til Wikidata-emner
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Etymologi i OpenStreetMap</h1>
+					<h3>Wikidata</h3>
+					<p class="fragment">Wikidata er emner med data som <code>key</em>⇒value</em></code></p>
+					<p class="fragment"><em>Helle Gotved</em> (<a
+							href="https://www.wikidata.org/wiki/Q12316068">Q12316068</a>):</p>
+					<table class="fragment" style="font-size: 0.6em;">
+						<tr>
+							<td><em>tilfælde af</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Property:P31">P31</a></sub></td>
+							<td><em>menneske</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Q5">Q5</a></sub></td>
+						</tr>
+						<tr>
+							<td><em>køn</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Property:P21">P21</a></sub></td>
+							<td><em>kvinde</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Q6581072">Q6581072</a></sub></td>
+						</tr>
+						<tr>
+							<td><em>beskæftigelse</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Property:P106">P106</a></sub></td>
+							<td><em>gymnastiklærer</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Q2312637">Q2312637</a></sub></td>
+						</tr>
+						<tr>
+							<td><em>beskæftigelse</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Property:P106">P106</a></sub></td>
+							<td><em>forfatter</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Q36180">Q36180</a></sub></td>
+						</tr>
+						<tr>
+							<td><em>beskæftigelse</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Property:P106">P106</a></sub></td>
+							<td><em>gymnast</em> <sub style="font-size: 0.4em;"><a
+										href="https://www.wikidata.org/wiki/Q16947675">Q16947675</a></sub></td>
+						</tr>
+						<tr>
+							<td>…</td>
+							<td>…</td>
+						</tr>
+					</table>
+					<aside class="notes">
+						Wikidata: Uafhængige, strukturerede stamdata<br>
+						Henviser til øvrige emner; sjældent prosatekst<br>
+						Tilsvarende opbygning med key-value<br>
+						Kan finmaskes (fx start- og sluttidspunkt tilknyttet værdier)<br>
+					</aside>
+				</section>
+			</section>
+			<section>
+				<section data-auto-animate>
+					<!-- Tilføj billeder fra Sundby Bibliotek! -->
+					<!-- Skriv om min baggrund for dataindsamling; Sofie, legedag -->
+					<h3>Datagrundlag</h3>
+					<ul>
+						<li class="fragment">Bøger og fortegnelser<ul>
+								<li>Storbyens Stednavne, Lokalarkiver, websites</li>
+							</ul>
+						</li>
+						<li class="fragment">Lokal kontekst<ul>
+								<li>Nykøbingvej, Kirkevej, Rådhuspladsen</li>
+							</ul>
+						</li>
+						<li class="fragment">Navne med utvetydige emner<ul>
+								<li>Folke Bernadottes Alle, Ugandavej, Birkevej</li>
+							</ul>
+						</li>
+					</ul>
+					<aside class="notes">
+						Mange biblioteksbesøg!<br>
+						Kontekst: Hvilken Nykøbing, hvilken kirke, hvilket rådhus<br>
+						Ikke alt er utvetydigt. Fælder!<br>
+						Kirkevej i Dragør er opkaldt efter Store Magleby Kirke.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Datagrundlag</h3>
+					<h4>Men hvad med …</h4>
+					<ul>
+						<li>Lærkevej</li>
+						<li>Holbergstien, Randers</li>
+						<li>Amerikavej, København</li>
+						<li>Vejlegade, Nakskov</li>
+						<li>Ananasvænget, Odense</li>
+						<li>Fuglebakken, Vordingborg</li>
+					</ul>
+					<aside class="notes">
+						Lærker: Ca. 60 % fugle, 40 % træer<br>
+						Holberg: Den tredje Ludvig Holberg<br>
+						Amerikavej: Amerikamøllen, amerikansk konsul<br>
+						Vejlegade: "vejle" er et vadested<br>
+						Ananasvænget: Rød Ananas, æblesort<br>
+						(givet ud fra lokal kontekst med andre æblesort-veje)<br>
+						Fuglebakken: Handelsgartner Axel Fugl<br>
+						Derfor er det sundt at bruge utvetydige Wikidata-emner
+					</aside>
+				</section>
+			</section>
+			<section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<aside class="notes">
+						Alle præsentationer er database-opslag i PostgreSQL.<br>
+						Ingen manuel optælling!<br>
+						Data fra primo november 2024
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h3>Simple opsummeringer</h3>
+					<table class="fragment" style="font-size: 0.6em;">
+						<tr>
+							<td>Mest brugte emne</td>
+							<td>birk (306)</td>
+						</tr>
+						<tr>
+							<td>Mest udbredte emne</td>
+							<td>birk (91 kommuner)</td>
+						</tr>
+						<tr>
+							<td>Mest udbredte person</td>
+							<td>N.F.S. Grundtvig (35 kommuner)</td>
+						</tr>
+						<tr>
+							<td>Mest udbredte nulevende person</td>
+							<td>Margrethe II (14 kommuner)</td>
+						</tr>
+						<tr>
+							<td>Mest udbredte person født i Esbjerg</td>
+							<td>John Tranum (2 kommuner)</td>
+						</tr>
+						<tr>
+							<td>Antal forskellige mennesker</td>
+							<td>2.112 mennesker</td>
+						</tr>
+						<tr>
+							<td>Mest udbredte profession</td>
+							<td>Politiker (275 personer)</td>
+						</tr>
+					</table>
+					<aside class="notes">
+						En kommune kan både have Birkevej, Birkevænget, Birkehaven, m.m.<br>
+						Person: "Tilfælde af", "menneske"<br>
+						H.C. Andersen er i 31 kommuner, overhalet af Jeppe Aakjær og St. St. Blicher<br>
+						Andre nulevende: Kongelige, sportsfolk, Bertel Haarder, Bjørn Nørgaard, Camilla Kjær
+						Pedersen<br>
+						Camilla Kjær Pedersen: Millesvej i Frederiksværk<br>
+						Men altså ikke længere Johnny Madsen<br>
+						John Tranum: Faldskærmsudspringer<br>
+						Næstmest udbredt profession: forfatter (208 personer)
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h3>Mere strukturerede opslag</h3>
+					<div class="fragment">
+						<img src="img/afstand_til_ophav.jpg">
+					</div>
+					<aside class="notes">
+						Vi har koordinat på vejen og på ophavet (når det er geografisk)<br>
+						Samoavej: Fjernest sted på Jorden fra ophavet<br>
+						Vi kunne også beregne til astronomiske objekter<br>
+						Men her er afstanden ikke konstant, idet Jorden drejer
+						samt bevæger sig om solen
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h3>Mere politiske opslag</h3>
+					<table class="fragment" style="font-size: 0.6em;">
+						<tr>
+							<td>Kvinder med veje opkaldt efter sig</td>
+							<td>332 kvinder</td>
+						</tr>
+						<tr>
+							<td>Mænd med veje opkaldt efter sig</td>
+							<td>1.957 mænd</td>
+						</tr>
+						<tr>
+							<td>Forhold mellem mænd og kvinder</td>
+							<td>85 % / 15 %</td>
+						</tr>
+						<tr class="fragment">
+							<td>Kommuner med steder opkaldt efter nazister</td>
+							<td>Frederikshavn<br>Tønder<br>Aabenraa<br>Helsingør <span class="fragment"
+									style="color: #c22">(to
+									tilfælde)</span></td>
+						</tr>
+					</table>
+					<aside class="notes">
+						1.937+332 (=2.289) er mere end 2.112 mennesker?<br>
+						Det skyldes, at køn også omfatter fx guder og fiktive personer<br>
+						Nazister: Medlem af NSDAP eller DNSAP<br>
+						Emil Nolde, Harald Bergstedt og Simon Spies
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h3>Kvinder</h3>
+					<div class="r-stretch">
+						<img src="img/kvinder.png">
+					</div>
+					<p style="font-size: 0.5em;">Baggrundskort: Klimadatastyrelsen</p>
+					<aside class="notes">
+						Største træ af sammenhængne veje for bestemt emne/køn<br>
+						6,7 kilometer. Næstved.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h3>Mænd</h3>
+					<div class="r-stretch">
+						<img src="img/mænd.png">
+					</div>
+					<p style="font-size: 0.5em;">Baggrundskort: OpenStreetMap</p>
+					<aside class="notes">
+						82,9 kilometer. København.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h3>Digtere</h3>
+					<div class="r-stretch">
+						<img src="img/digtere.jpg">
+					</div>
+					<p style="font-size: 0.5em;">Baggrundskort: Klimadatastyrelsen</p>
+					<aside class="notes">
+						14,4 kilometer. Aarhus.<br>
+						Forældet billede, dog.<br>
+						Endnu længere, hvis vi tillader at hoppe over rundkørsler.<br>
+						(buffer med ST_ClusterWithin)
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h3>Total vejlængde i Danmark</h3>
+					<ul>
+						<li>Kvinder: 341 km</li>
+						<li>Mænd: 2.098 km</li>
+						<li class="fragment">Hankønsdyr: 10 km
+							<ul class="fragment">
+								<li>Hankønsdyr? <a href="Q27688665">Bambi</a>, <a
+										href="https://www.wikidata.org/wiki/Q182560">Fenrisulven</a>, <a
+										href="https://www.wikidata.org/wiki/Q2418385">Grane</a> og <a
+										href="https://www.wikidata.org/wiki/Q162797">Pegasus</a></li>
+								<li>Wikidata skelner imellem mænd, kvinder, hankøn og hunkøn</li>
+							</ul>
+						</li>
+					</ul>
+					<aside class="notes">
+						Dronning Margrethe står for 5 % af kvindernes vejlængde
+					</aside>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Samarbejde om indhold</h1>
+				</section>
+				<!-- Todo -->
+			</section>
+			<section>
+				<h3>Ressourcer</h3>
+				<ul>
+					<li><a href="https://www.openstreetmap.org/">OpenStreetMap</a>
+						<ul>
+							<li><a
+									href="https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata"><code>name:etymology:wikidata</code></a>
+								(<a
+									href="https://taginfo.geofabrik.de/europe:denmark/keys/name%3Aetymology%3Awikidata#chronology">kronologi</a>)
+							</li>
+						</ul>
+					</li>
+					<li><a href="https://www.wikidata.org/">Wikidata</a></li>
+					<li><a href="https://navne.findvej.dk/">navne.findvej.dk</a> (Hvad er steder opkaldt efter?)
+						<ul>
+							<li><a href="https://github.com/PeterBrodersen/osmetymology">osmetymology</a> (GitHub)</li>
+						</ul>
+					</li>
+					<li>
+						<a href="https://www.postgresql.org/">PostgreSQL</a>
+						<ul>
+							<li><a href="https://postgis.net/">PostGIS</a></li>
+							<li><a
+									href="https://postgis.net/docs/ST_ClusterIntersecting.html"><code>ST_ClusterIntersecting()</code></a>
+							</li>
+							<li><a
+									href="https://www.postgresql.org/docs/current/functions-json.html">jsonb-funktioner</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section data-background-image="../3DBygninger/img/Ruben.jpg">
+			</section>
+		</div>
+	</div>
+
+	<script src="../dist/reveal.js"></script>
+	<script src="../plugin/notes/notes.js"></script>
+	<script src="../plugin/markdown/markdown.js"></script>
+	<script src="../plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			transition: 'slide',
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
