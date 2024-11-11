@@ -80,11 +80,13 @@
 					<ul>
 						<li>Åbent og frit kort over hele verden</li>
 						<li>Oprettet og vedligeholdt af frivillige, m.m.</li>
+						<li>Vektorbaseret med nøgler og værdier</li>
 						<li>Både fysiske karakteristika og metadata</li>
 					</ul>
 					<aside class="notes">
 						Åben datalicens, kan bruges af alle, også kommercielt.<br>
-						Kan downloades!<br>
+						Kan downloades! OpenStreetMap-hjemmesiden er blot én indgang.<br>
+						Værktøjer, fra vektordata til grafik<br>
 						Virksomheder og myndigheder bidrager også.<br>
 						Fysisk karakteristika: Antal vejbaner, overfladebelægning<br>
 						Metadata: Fartgrænse, opførelsesår, etymologi
@@ -124,7 +126,8 @@
 						OpenStreetMap er international. Bruger ikke kommune- og vejkoder<br>
 						Kommunegrænser kommer fra GeoDanmark: Kommuneomraade<br>
 						Kommunegrænser med buffer (aht. broer m.m.)<br>
-						Sjældent oplysninger om navngivningstidspunkt
+						Sjældent oplysninger om navngivningstidspunkt<br>
+						30.000 navne - mange opdateret af mig :-)
 					</aside>
 				</section>
 				<section data-auto-animate>
@@ -237,6 +240,7 @@
 						</li>
 					</ul>
 					<aside class="notes">
+						Storbyens Stednavne af Bent Jørgensen<br>
 						Mange biblioteksbesøg!<br>
 						Kontekst: Hvilken Nykøbing, hvilken kirke, hvilket rådhus<br>
 						Ikke alt er utvetydigt. Fælder!<br>
@@ -253,6 +257,7 @@
 						<li>Vejlegade, Nakskov</li>
 						<li>Ananasvænget, Odense</li>
 						<li>Fuglebakken, Vordingborg</li>
+						<li>Hendriksholm, Rødovre</li>
 					</ul>
 					<aside class="notes">
 						Lærker: Ca. 60 % fugle, 40 % træer<br>
@@ -262,7 +267,15 @@
 						Ananasvænget: Rød Ananas, æblesort<br>
 						(givet ud fra lokal kontekst med andre æblesort-veje)<br>
 						Fuglebakken: Handelsgartner Axel Fugl<br>
+						Hendriksholm: Opkaldt efter Bredo Henrik von Munthe af Morgenstierne, men hvilken af dem?<br>
 						Derfor er det sundt at bruge utvetydige Wikidata-emner
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Datagrundlag</h3>
+					<h4>Hold tungen i munden!</h4>
+					<aside class="notes">
+						Og det er rart når kilder har fødsels- og dødsår angivet!
 					</aside>
 				</section>
 			</section>
@@ -347,8 +360,8 @@
 							<td>1.957 mænd</td>
 						</tr>
 						<tr>
-							<td>Forhold mellem mænd og kvinder</td>
-							<td>85 % / 15 %</td>
+							<td>Forhold mellem kvinder og mænd</td>
+							<td>15 % / 85 %</td>
 						</tr>
 						<tr class="fragment">
 							<td>Kommuner med steder opkaldt efter nazister</td>
@@ -358,10 +371,10 @@
 						</tr>
 					</table>
 					<aside class="notes">
-						1.937+332 (=2.289) er mere end 2.112 mennesker?<br>
+						1.957+332 (=2.289) er mere end 2.112 mennesker?<br>
 						Det skyldes, at køn også omfatter fx guder og fiktive personer<br>
 						Nazister: Medlem af NSDAP eller DNSAP<br>
-						Emil Nolde, Harald Bergstedt og Simon Spies
+						Emil Nolde (kunstner, 3 steder), Harald Bergstedt (forfatter) og Simon Spies
 					</aside>
 				</section>
 				<section data-auto-animate>
@@ -423,14 +436,23 @@
 				</section>
 			</section>
 			<section>
-				<section>
-					<h1>Samarbejde om indhold</h1>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Samarbejde om indhold</h1>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Samarbejde om indhold</h1>
 				</section>
 				<!-- Todo -->
 			</section>
 			<section>
 				<h3>Ressourcer</h3>
 				<ul>
+					<li><a href="https://navne.findvej.dk/">navne.findvej.dk</a> (Hvad er steder opkaldt efter?)
+						<ul>
+							<li><a href="https://github.com/PeterBrodersen/osmetymology/blob/main/Resources.md">Kilder og ressourcer, linkoversigt</a></li>
+							<li><a href="https://github.com/PeterBrodersen/osmetymology">osmetymology</a> (GitHub-projekt for website)</li>
+						</ul>
+					</li>
 					<li><a href="https://www.openstreetmap.org/">OpenStreetMap</a>
 						<ul>
 							<li><a
@@ -441,23 +463,6 @@
 						</ul>
 					</li>
 					<li><a href="https://www.wikidata.org/">Wikidata</a></li>
-					<li><a href="https://navne.findvej.dk/">navne.findvej.dk</a> (Hvad er steder opkaldt efter?)
-						<ul>
-							<li><a href="https://github.com/PeterBrodersen/osmetymology">osmetymology</a> (GitHub)</li>
-						</ul>
-					</li>
-					<li>
-						<a href="https://www.postgresql.org/">PostgreSQL</a>
-						<ul>
-							<li><a href="https://postgis.net/">PostGIS</a></li>
-							<li><a
-									href="https://postgis.net/docs/ST_ClusterIntersecting.html"><code>ST_ClusterIntersecting()</code></a>
-							</li>
-							<li><a
-									href="https://www.postgresql.org/docs/current/functions-json.html">jsonb-funktioner</a>
-							</li>
-						</ul>
-					</li>
 				</ul>
 			</section>
 			<section data-background-image="../3DBygninger/img/Ruben.jpg">
