@@ -30,9 +30,10 @@
 				<section data-auto-animate>
 					<h3>Peter Brodersen, Septima</h3>
 					<ul>
-						<li>Udvikler hos Septima P/S</li>
+						<li>Findvej.dk, 2005</li>
+						<li>Septima, 2018</li>
 						<li>Frivillig bruger på Wikipedia og OpenStreetMap</li>
-						<li>Ikke uddannet historiker (eller programmør)</li>
+						<li>Ikke uddannet historiker <span class="fragment">(eller programmør)</span></li>
 						<li>… og glad for data</li>
 					</ul>
 					<aside class="notes">
@@ -44,15 +45,187 @@
 				<section>
 					<h3>Dagens emner</h3>
 					<ul>
+						<li>Databasen og muligheder med struktureret data</li>
 						<li>Etymologi i OpenStreetMap</li>
 						<li>Datagrundlag</li>
-						<li>Muligheder med struktureret data</li>
 					</ul>
 				</section>
 				<aside class="notes">
 					Etymologi: Hvad er indholdet? Hvad er OpenStreetMap?<br>
 					Datagrundlag: Hvor kommer data fra? Biblioteksbesøg, fælder.<br>
 					Muligheder: Databaseopslag, m.m. Professioner, køn, etc.
+				</aside>
+			</section>
+			<section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<aside class="notes">
+						Alle præsentationer er database-opslag i PostgreSQL.<br>
+						Ingen manuel optælling!<br>
+						Data fra primo november 2025
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h3>Simple opsummeringer</h3>
+					<table class="fragment" style="font-size: 0.6em;">
+						<tr>
+							<td>Mest brugte emne</td>
+							<td>birk (306)</td>
+						</tr>
+						<tr>
+							<td>Mest udbredte emne</td>
+							<td>birk (91 kommuner)</td>
+						</tr>
+						<tr>
+							<td>Mest udbredte person</td>
+							<td>N.F.S. Grundtvig (35 kommuner)</td>
+						</tr>
+						<tr>
+							<td>Mest udbredte nulevende person</td>
+							<td>Margrethe II (14 kommuner)</td>
+						</tr>
+						<tr>
+							<td>Mest udbredte person født i Esbjerg</td>
+							<td>John Tranum (2 kommuner)</td>
+						</tr>
+						<tr>
+							<td>Antal forskellige mennesker</td>
+							<td>2.112 mennesker</td>
+						</tr>
+						<tr>
+							<td>Mest udbredte profession</td>
+							<td>Politiker (275 personer)</td>
+						</tr>
+					</table>
+					<aside class="notes">
+						En kommune kan både have Birkevej, Birkevænget, Birkehaven, m.m.<br>
+						Person: "Tilfælde af", "menneske"<br>
+						H.C. Andersen er i 31 kommuner, overhalet af Jeppe Aakjær og St. St. Blicher<br>
+						Andre nulevende: Kongelige, sportsfolk, Bertel Haarder, Bjørn Nørgaard, Camilla Kjær
+						Pedersen<br>
+						Men altså ikke længere Johnny Madsen<br>
+						John Tranum: Faldskærmsudspringer<br>
+						Næstmest udbredt profession: forfatter (208 personer)
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h3>Mere strukturerede opslag</h3>
+					<div class="r-stretch">
+						<img src="img/afstand_til_ophav.jpg">
+					</div>
+					<aside class="notes">
+						Vi har koordinat på vejen og på ophavet (når det er geografisk)<br>
+						Samoavej: Fjernest sted på Jorden fra ophavet<br>
+						Vi kunne også beregne til astronomiske objekter<br>
+						Men her er afstanden ikke konstant, idet Jorden drejer
+						samt bevæger sig om solen
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h3>Mere politiske opslag</h3>
+					<table class="fragment" style="font-size: 0.6em;">
+						<tr>
+							<td>Kvinder med veje opkaldt efter sig</td>
+							<td>466 kvinder</td>
+						</tr>
+						<tr>
+							<td>Mænd med veje opkaldt efter sig</td>
+							<td>2.991 mænd</td>
+						</tr>
+						<tr>
+							<td>Forhold mellem kvinder og mænd</td>
+							<td>13 % / 87 %</td>
+						</tr>
+						<tr class="fragment">
+							<td>… <em>der har eksisteret</em></td>
+							<td>12 % / 88 %</td>
+						</tr>
+						<tr class="fragment">
+							<td>Kommuner med steder opkaldt efter nazister<br>(medlemmer af NSDAP eller DNSAP)</td>
+							<td>Frederikshavn<br>Tønder<br>Aabenraa<br>Helsingør <span class="fragment"
+									style="color: #c22">(to
+									tilfælde)</span></td>
+						</tr>
+					</table>
+					<aside class="notes">
+						Køn kan også omfatte fx guder og fiktive personer<br>
+						Nazister: Medlem af NSDAP eller DNSAP<br>
+						Emil Nolde (kunstner, 3 steder), Harald Bergstedt (forfatter) og Simon Spies<br>
+						Dette er fortsat database-opslag
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h3>Kvinder</h3>
+					<div class="r-stretch">
+						<img src="img/kvinder.png">
+					</div>
+					<p style="font-size: 0.5em;">Baggrundskort: Klimadatastyrelsen</p>
+					<aside class="notes">
+						Største træ af sammenhængne veje for bestemt emne/køn<br>
+						6,7 kilometer. Næstved.<br>
+						Begrænset til eksisterende personer.<br>
+						Ignorerer Dronningens Boulevard i Herning.
+
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h3>Mænd</h3>
+					<div class="r-stretch">
+						<img src="img/mænd.png">
+					</div>
+					<p style="font-size: 0.5em;">Baggrundskort: OpenStreetMap</p>
+					<aside class="notes">
+						95 kilometer. København.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h3>Digtere</h3>
+					<div class="r-stretch">
+						<img src="img/digtere.jpg">
+					</div>
+					<p style="font-size: 0.5em;">Baggrundskort: Klimadatastyrelsen</p>
+					<aside class="notes">
+						14,4 kilometer. Aarhus.<br>
+						Forældet billede, dog.<br>
+						Endnu længere, hvis vi tillader at hoppe over rundkørsler.<br>
+						(buffer med ST_ClusterWithin)
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h3>Total vejlængde i Danmark</h3>
+					<ul>
+						<li>Kvinder: 398 km</li>
+						<li>Mænd: 2.776 km</li>
+						<li class="fragment">Hankønsdyr: 11 km
+							<ul class="fragment">
+								<li>Hankønsdyr? <a href="Q27688665">Bambi</a>, <a
+										href="https://www.wikidata.org/wiki/Q182560">Fenrisulven</a>, <a
+										href="https://www.wikidata.org/wiki/Q2418385">Grane</a> og <a
+										href="https://www.wikidata.org/wiki/Q162797">Pegasus</a></li>
+								<li>Wikidata skelner imellem mænd, kvinder, hankøn og hunkøn</li>
+							</ul>
+						</li>
+					</ul>
+					<aside class="notes">
+						Dronning Margrethe står for 4 % af kvindernes vejlængde
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h3><a href="https://navne.findvej.dk/kommuner/">Opslag på kommuneniveau</a></h3>
+					<div class="fragment"><img src="img/Hjørring_kvinder_mænd.png"></div>
+				</section>
+				<aside class="notes">
+					Forskel mellem om det har været eksisterende personer eller mytologiske personer.<br>
+					Hjørring Kommune: 2 kvinder, 107 mænd (inkl. fiktive: 15 kvinder, 127 mænd)<br>
+					46 ud af 98 kommuner har maksimalt 2 veje opkaldt efter eksisterende kvinder.
 				</aside>
 			</section>
 			<section>
@@ -289,178 +462,6 @@
 						Og det er rart når kilder har fødsels- og dødsår angivet!
 					</aside>
 				</section>
-			</section>
-			<section>
-				<section data-auto-animate>
-					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
-					<aside class="notes">
-						Alle præsentationer er database-opslag i PostgreSQL.<br>
-						Ingen manuel optælling!<br>
-						Data fra primo november 2025
-					</aside>
-				</section>
-				<section data-auto-animate>
-					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
-					<h3>Simple opsummeringer</h3>
-					<table class="fragment" style="font-size: 0.6em;">
-						<tr>
-							<td>Mest brugte emne</td>
-							<td>birk (306)</td>
-						</tr>
-						<tr>
-							<td>Mest udbredte emne</td>
-							<td>birk (91 kommuner)</td>
-						</tr>
-						<tr>
-							<td>Mest udbredte person</td>
-							<td>N.F.S. Grundtvig (35 kommuner)</td>
-						</tr>
-						<tr>
-							<td>Mest udbredte nulevende person</td>
-							<td>Margrethe II (14 kommuner)</td>
-						</tr>
-						<tr>
-							<td>Mest udbredte person født i Esbjerg</td>
-							<td>John Tranum (2 kommuner)</td>
-						</tr>
-						<tr>
-							<td>Antal forskellige mennesker</td>
-							<td>2.112 mennesker</td>
-						</tr>
-						<tr>
-							<td>Mest udbredte profession</td>
-							<td>Politiker (275 personer)</td>
-						</tr>
-					</table>
-					<aside class="notes">
-						En kommune kan både have Birkevej, Birkevænget, Birkehaven, m.m.<br>
-						Person: "Tilfælde af", "menneske"<br>
-						H.C. Andersen er i 31 kommuner, overhalet af Jeppe Aakjær og St. St. Blicher<br>
-						Andre nulevende: Kongelige, sportsfolk, Bertel Haarder, Bjørn Nørgaard, Camilla Kjær
-						Pedersen<br>
-						Men altså ikke længere Johnny Madsen<br>
-						John Tranum: Faldskærmsudspringer<br>
-						Næstmest udbredt profession: forfatter (208 personer)
-					</aside>
-				</section>
-				<section data-auto-animate>
-					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
-					<h3>Mere strukturerede opslag</h3>
-					<div class="r-stretch">
-						<img src="img/afstand_til_ophav.jpg">
-					</div>
-					<aside class="notes">
-						Vi har koordinat på vejen og på ophavet (når det er geografisk)<br>
-						Samoavej: Fjernest sted på Jorden fra ophavet<br>
-						Vi kunne også beregne til astronomiske objekter<br>
-						Men her er afstanden ikke konstant, idet Jorden drejer
-						samt bevæger sig om solen
-					</aside>
-				</section>
-				<section data-auto-animate>
-					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
-					<h3>Mere politiske opslag</h3>
-					<table class="fragment" style="font-size: 0.6em;">
-						<tr>
-							<td>Kvinder med veje opkaldt efter sig</td>
-							<td>466 kvinder</td>
-						</tr>
-						<tr>
-							<td>Mænd med veje opkaldt efter sig</td>
-							<td>2.991 mænd</td>
-						</tr>
-						<tr>
-							<td>Forhold mellem kvinder og mænd</td>
-							<td>13 % / 87 %</td>
-						</tr>
-						<tr class="fragment">
-							<td>… <em>der har eksisteret</em></td>
-							<td>12 % / 88 %</td>
-						</tr>
-						<tr class="fragment">
-							<td>Kommuner med steder opkaldt efter nazister<br>(medlemmer af NSDAP eller DNSAP)</td>
-							<td>Frederikshavn<br>Tønder<br>Aabenraa<br>Helsingør <span class="fragment"
-									style="color: #c22">(to
-									tilfælde)</span></td>
-						</tr>
-					</table>
-					<aside class="notes">
-						Køn kan også omfatte fx guder og fiktive personer<br>
-						Nazister: Medlem af NSDAP eller DNSAP<br>
-						Emil Nolde (kunstner, 3 steder), Harald Bergstedt (forfatter) og Simon Spies<br>
-						Dette er fortsat database-opslag
-					</aside>
-				</section>
-				<section data-auto-animate>
-					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
-					<h3>Kvinder</h3>
-					<div class="r-stretch">
-						<img src="img/kvinder.png">
-					</div>
-					<p style="font-size: 0.5em;">Baggrundskort: Klimadatastyrelsen</p>
-					<aside class="notes">
-						Største træ af sammenhængne veje for bestemt emne/køn<br>
-						6,7 kilometer. Næstved.<br>
-						Begrænset til eksisterende personer.<br>
-						Ignorerer Dronningens Boulevard i Herning.
-
-					</aside>
-				</section>
-				<section data-auto-animate>
-					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
-					<h3>Mænd</h3>
-					<div class="r-stretch">
-						<img src="img/mænd.png">
-					</div>
-					<p style="font-size: 0.5em;">Baggrundskort: OpenStreetMap</p>
-					<aside class="notes">
-						95 kilometer. København.
-					</aside>
-				</section>
-				<section data-auto-animate>
-					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
-					<h3>Digtere</h3>
-					<div class="r-stretch">
-						<img src="img/digtere.jpg">
-					</div>
-					<p style="font-size: 0.5em;">Baggrundskort: Klimadatastyrelsen</p>
-					<aside class="notes">
-						14,4 kilometer. Aarhus.<br>
-						Forældet billede, dog.<br>
-						Endnu længere, hvis vi tillader at hoppe over rundkørsler.<br>
-						(buffer med ST_ClusterWithin)
-					</aside>
-				</section>
-				<section data-auto-animate>
-					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
-					<h3>Total vejlængde i Danmark</h3>
-					<ul>
-						<li>Kvinder: 398 km</li>
-						<li>Mænd: 2.776 km</li>
-						<li class="fragment">Hankønsdyr: 11 km
-							<ul class="fragment">
-								<li>Hankønsdyr? <a href="Q27688665">Bambi</a>, <a
-										href="https://www.wikidata.org/wiki/Q182560">Fenrisulven</a>, <a
-										href="https://www.wikidata.org/wiki/Q2418385">Grane</a> og <a
-										href="https://www.wikidata.org/wiki/Q162797">Pegasus</a></li>
-								<li>Wikidata skelner imellem mænd, kvinder, hankøn og hunkøn</li>
-							</ul>
-						</li>
-					</ul>
-					<aside class="notes">
-						Dronning Margrethe står for 4 % af kvindernes vejlængde
-					</aside>
-				</section>
-				<section data-auto-animate>
-					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
-					<h3><a href="https://navne.findvej.dk/kommuner/">Opslag på kommuneniveau</a></h3>
-					<div class="fragment"><img src="img/Hjørring_kvinder_mænd.png"></div>
-				</section>
-				<aside class="notes">
-					Forskel mellem om det har været eksisterende personer eller mytologiske personer.<br>
-					Hjørring Kommune: 1 kvinde, 100 mænd (inkl. fiktive: 14 kvinder, 120 mænd)<br>
-					35 ud af 98 kommuner har færre end 2 veje opkaldt efter eksisterende kvinder.
-				</aside>
 			</section>
 			<section>
 				<section data-auto-animate>
