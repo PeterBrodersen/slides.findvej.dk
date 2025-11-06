@@ -189,6 +189,21 @@
 				</section>
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h3 class="r-fit-text">Undgå veje opkaldt efter mænd</h3>
+					<div class="r-stretch">
+						<a
+							href="https://osrm.findvej.dk/nomales/?z=16&center=55.667039%2C12.533705&loc=55.665580%2C12.529242&loc=55.665435%2C12.530379&hl=da&alt=0"><img
+								src="img/osrm_undgå_mænd.png"></a>
+					</div>
+					<aside class="notes">
+						OSRM, Open Source Routing Machine<br>
+						Brugerdefineret routing-profil<br>
+						Ruteplanlægger, der fortæller om den vej, man kører på, med
+						fortællingen tilpasset den beregnede tid, man bruger på vejstykket
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
 					<h3>Mere politiske opslag</h3>
 					<table class="fragment" style="font-size: 0.6em;">
 						<tr>
@@ -255,7 +270,9 @@
 					<p style="font-size: 0.5em;">Baggrundskort: OpenStreetMap</p>
 					<aside class="notes">
 						15 kilometer, Sønderborg<br>
-						(buffer med ST_ClusterWithin)
+						(buffer med ST_ClusterWithin)<br>
+						Vejnavne er kultur! Det er stort set altid kommunerne, der bestemmer, hvad vejene skal hedde. Så
+						hvad har politikerne i kommunerne bestemt? At politikere er de vigtigste at opkalde veje efter.
 					</aside>
 				</section>
 				<section data-auto-animate>
@@ -297,8 +314,7 @@
 								med et bruttonationalprodukt på<br>
 								over 500 milliarder dollars har<br>
 								steder opkaldt efter sig?</td>
-
-							<td>17 musikere<br>(fra USA, Sverige, Tyskland og Frankrig)</td>
+							<td class="fragment">17 musikere<br>(fra USA, Sverige, Tyskland og Frankrig)</td>
 						</tr>
 					</table>
 					<aside class="notes">
@@ -535,6 +551,12 @@ AND w_country.claims @@ '$.P463[*].mainsnak.datavalue.value.id == "Q7184"' -- Me
 					<li>Wikidata, fri licens</li>
 					<li>Website, Open Source</li>
 				</ul>
+				<aside class="notes">
+					Jeg håber at have vist, at vi i dette projekt har fået mere indsigt end bare databaseopslag og
+					simple søg & erstat-navneopslag.<br>
+					Og hvis nogen bruger projektet eller bliver inspireret af det, så har jeg ikke spildt de seneste to
+					år af mit liv.
+				</aside>
 			</section>
 			<section>
 				<h3>Spørgsmål?</h3>
