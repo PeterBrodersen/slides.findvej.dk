@@ -45,28 +45,23 @@
 				<section>
 					<h3>Dagens emner</h3>
 					<ul>
-						<li>Databasen og muligheder med struktureret data</li>
+						<li>Navneprojektet</li>
+						<li>Muligheder med struktureret data</li>
 						<li>Etymologi i OpenStreetMap</li>
 						<li>Datagrundlag</li>
 					</ul>
 				</section>
 				<aside class="notes">
-					Muligheder: Databaseopslag, m.m. Professioner, køn, etc.
-					Etymologi: Hvad er indholdet? Hvad er OpenStreetMap?<br>
-					Datagrundlag: Hvor kommer data fra? Biblioteksbesøg, fælder.<br>
 				</aside>
 			</section>
 			<section>
 				<section data-auto-animate>
-					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
-					<aside class="notes">
-						Alle præsentationer er database-opslag i PostgreSQL.<br>
-						Ingen manuel optælling!<br>
-						Data fra primo november 2025
-					</aside>
+					<h1 class="r-fit-text">Navneprojektet</h1>
+
 				</section>
+
 				<section data-auto-animate>
-					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h1 class="r-fit-text">Navneprojektet</h1>
 					<div class="r-stretch">
 						<a href="https://navne.findvej.dk/"><img src="img/navne_findvej_dk_jomfru_ane_gade.png"></a>
 					</div>
@@ -80,8 +75,8 @@
 					</aside>
 				</section>
 				<section data-auto-animate>
-					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
-					<h3>Kvantitativt vs. kvalitativt</h3>
+					<h1 class="r-fit-text">Navneprojektet</h1>
+					<h3>Kvantitativt ⟺ kvalitativt</h3>
 					<div style="float: left; margin-right: 2em;"><img src="img/kvantitativt_cph.png"></div>
 					<div style="font-size: 0.7em;"><a href="https://bramminginfo.dk/gadenavne.html"><em>Gehejmeråd og
 								stiftamtmand i Ribe, Chr. Carl von Gabel
@@ -89,73 +84,93 @@
 								ejer af Bramming Hovedgård og boede da også på gården en tid. Han blev i datiden
 								kendt for sit humanitære og socialt indstillede livssyn, som han vistnok lod komme til
 								udtryk på forskellig vis. I 1907 var der et andragende [...]</em></a></div>
-
 					<aside class="notes">
+						Lokalhistorikere har gjort et fantastisk stykke arbejde. Oplysninger har dog
+						ofte været spredt og ustrukturerede til dette formål.<br>
 						Vi propper data i kasser. Opsummering på tværs af al data.<br>
 						I resultatet har vi ikke mellemregninger, historier, eller kontekst som fx hvorfor man
 						besluttede sig for, at netop den vej skulle hedde det.
 					</aside>
 				</section>
 				<section data-auto-animate>
-					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h1 class="r-fit-text">Navneprojektet</h1>
+					<h3>Data for over 45.000 veje</h3>
+					<div class="r-stretch">
+						<img src="img/Danmark.png">
+					</div>
+					<aside class="notes">
+						Ca. 110.000 veje i Danmark<br>
+						Oplysninger om veje, skoler, kirker (m.m.), bygninger - og nogle byer<br>
+						Behøver ikke at være begrænset til Danmark.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Navneprojektet</h1>
 					<h3><a href="https://navne.findvej.dk/kommuner/">Opslag på kommuneniveau</a></h3>
 					<div class="r-stretch"><img src="img/kommuner_oversigt.png"></div>
 					<aside class="notes">
 						Forskel mellem om det har været eksisterende personer eller mytologiske personer.<br>
-						46 ud af 98 kommuner har maksimalt 2 veje opkaldt efter eksisterende kvinder.
+						45 ud af 98 kommuner har maksimalt 2 veje opkaldt efter kvinder, som har eksisteret.
 					</aside>
 				</section>
 				<section data-auto-animate>
-					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h1 class="r-fit-text">Navneprojektet</h1>
 					<h3><a href="https://navne.findvej.dk/kommuner/#0860">Hjørring Kommune</a></h3>
 					<h4>2 kvinder og 107 mænd</h4>
 					<div class="r-stretch"><img src="img/Hjørring_kvinder_mænd.png"></div>
 					<aside class="notes">
-						Hjørring Kommune: 2 kvinder, 107 mænd (inkl. fiktive: 15 kvinder, 127 mænd)
+						Hjørring Kommune: 2 kvinder, 107 mænd (inkl. fiktive: 15 kvinder, 127 mænd)<br>
+						Den ene kvinde er ægtefælle til mand, som der også er vej opkaldt efter.<br>
+						Den anden kvinde producerede krydret brændevin.
+					</aside>
+				</section>
+			</section>
+			<section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<aside class="notes">
+						Alle præsentationer er database-opslag i PostgreSQL.<br>
+						Ingen manuel optælling!<br>
+						Data fra primo november 2025
 					</aside>
 				</section>
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
-					<h3>Simple opsummeringer</h3>
+					<h3>Simple opsummeringer for veje</h3>
 					<table class="fragment" style="font-size: 0.6em;">
 						<tr>
 							<td>Mest brugte emne</td>
-							<td>birk (306)</td>
+							<td>birk (354 veje)</td>
 						</tr>
 						<tr>
 							<td>Mest udbredte emne</td>
-							<td>birk (91 kommuner)</td>
+							<td>birk<br>rose (92 kommuner)</td>
 						</tr>
 						<tr>
 							<td>Mest udbredte person</td>
-							<td>N.F.S. Grundtvig (35 kommuner)</td>
+							<td>N.F.S. Grundtvig<br>St. St. Blicher (36 kommuner)</td>
 						</tr>
 						<tr>
 							<td>Mest udbredte nulevende person</td>
 							<td>Margrethe II (14 kommuner)</td>
 						</tr>
 						<tr>
-							<td>Mest udbredte person født i Esbjerg</td>
-							<td>John Tranum (2 kommuner)</td>
-						</tr>
-						<tr>
 							<td>Antal forskellige mennesker</td>
-							<td>2.112 mennesker</td>
+							<td>3.289 mennesker</td>
 						</tr>
 						<tr>
 							<td>Mest udbredte profession</td>
-							<td>Politiker (275 personer)</td>
+							<td>Politiker (372 personer)</td>
 						</tr>
 					</table>
 					<aside class="notes">
+						Opsummeret på veje<br>
 						En kommune kan både have Birkevej, Birkevænget, Birkehaven, m.m.<br>
-						Person: "Tilfælde af", "menneske"<br>
-						H.C. Andersen er i 31 kommuner, overhalet af Jeppe Aakjær og St. St. Blicher<br>
-						Andre nulevende: Kongelige, sportsfolk, Bertel Haarder, Bjørn Nørgaard, Camilla Kjær
-						Pedersen<br>
+						H.C. Andersen er i 30 kommuner, overhalet af fem andre<br>
+						(St. St. Blicher, Grundtvig, Jeppe Aakjær, B.S. Ingemann, Thomas Kingo)<br>
+						Andre nulevende: Kongelige, sportsfolk, Bertel Haarder, Bjørn Nørgaard<br>
 						Men altså ikke længere Johnny Madsen<br>
-						John Tranum: Faldskærmsudspringer<br>
-						Næstmest udbredt profession: forfatter (208 personer)
+						Næste professioner: forfatter (241), digter (160), kunstmaler (141), landmand (127)
 					</aside>
 				</section>
 				<section data-auto-animate>
@@ -263,6 +278,16 @@
 						Dronning Margrethe står for 4 % af kvindernes vejlængde<br>
 						Ingen veje opkaldt efter transkønnede personer endnu
 					</aside>
+				</section>
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h3>Spørgsmålene fra abstractet!</h3>
+					<ul>
+						<li>Lærkeveje</li>
+						<li>Konservative eller socialdemokratiske borgmestre</li>
+						<li>Hvor mange musikere fra NATO-lande med et bruttonationalprodukt på over 500 milliarder
+							dollars har steder opkaldt efter sig?</li>
+					</ul>
 				</section>
 			</section>
 			<section>
@@ -532,8 +557,6 @@
 					</li>
 				</ul>
 			</section>
-			<section data-background-image="../3DBygninger/img/Ruben.jpg">
-			</section>
 		</div>
 	</div>
 
@@ -550,7 +573,10 @@
 			transition: 'slide',
 
 			// Learn about plugins: https://revealjs.com/plugins/
-			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+
+			pdfSeparateFragments: false,
+
 		});
 	</script>
 </body>
