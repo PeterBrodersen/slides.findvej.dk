@@ -175,9 +175,9 @@
 				</section>
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
-					<h3>Mere strukturerede opslag</h3>
+					<h3 class="r-fit-text">Afstand til sted, vej er opkaldt efter</h3>
 					<div class="r-stretch">
-						<img src="img/afstand_til_ophav.jpg">
+						<img src="img/afstand_til_ophav.png">
 					</div>
 					<aside class="notes">
 						Vi har koordinat på vejen og på ophavet (når det er geografisk)<br>
@@ -210,15 +210,15 @@
 						<tr class="fragment">
 							<td>Kommuner med steder opkaldt efter nazister<br>(medlemmer af NSDAP eller DNSAP)</td>
 							<td>Frederikshavn<br>Tønder<br>Aabenraa<br>Helsingør <span class="fragment"
-									style="color: #c22">(to
-									tilfælde)</span></td>
+									style="color: #c22">(to tilfælde)</span></td>
 						</tr>
 					</table>
 					<aside class="notes">
 						Køn kan også omfatte fx guder og fiktive personer<br>
 						Nazister: Medlem af NSDAP eller DNSAP<br>
 						Emil Nolde (kunstner, 3 steder), Harald Bergstedt (forfatter) og Simon Spies<br>
-						Dette er fortsat database-opslag
+						Dette er fortsat database-opslag ud fra Wikidata. Det er ikke en diskussion om,
+						hvorvidt de var slemme eller ej.
 					</aside>
 				</section>
 				<section data-auto-animate>
@@ -281,13 +281,54 @@
 				</section>
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
-					<h3>Spørgsmålene fra abstractet!</h3>
-					<ul>
-						<li>Lærkeveje</li>
-						<li>Konservative eller socialdemokratiske borgmestre</li>
-						<li>Hvor mange musikere fra NATO-lande med et bruttonationalprodukt på over 500 milliarder
-							dollars har steder opkaldt efter sig?</li>
-					</ul>
+					<p>De svar, I har ventet på!</p>
+					<table class="fragment" style="font-size: 0.6em;">
+						<tr>
+							<td>Lærkevej, fugl eller træ?</td>
+							<td class="fragment">70 % fugl, 30 % træ</td>
+						</tr>
+						<tr class="fragment">
+							<td>Borgmestre<br>Konservative eller socialdemokratiske?</td>
+							<td class="fragment">Socialdemokratiet (29 borgmestre)<br>Venstre (14
+								borgmestre)<br>Konservative (12 borgmestre)</td>
+						</tr>
+						<tr class="fragment">
+							<td>Hvor mange musikere fra NATO-lande<br>
+								med et bruttonationalprodukt på<br>
+								over 500 milliarder dollars har<br>
+								steder opkaldt efter sig?</td>
+
+							<td>17 musikere<br>(fra USA, Sverige, Tyskland og Frankrig)</td>
+						</tr>
+					</table>
+					<aside class="notes">
+						Fortsat rene databaseopslag<br>
+						<!-- copilot forslag, forkert: Svarene er: Træ, konservative, nul -->
+						NATO-lande: USA, Sverige, Tyskland, Frankrig)<br>
+					</aside>
+				</section>
+				<section>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<p>SQL for musiker-spørgsmålet</p>
+					<pre>
+					<code class="hljs" style="font-size: 0.4em;">SELECT COUNT(DISTINCT w.itemid)
+FROM locations_agg l
+INNER JOIN osmetymology.wikidatamap map ON l.id = map.location_id 
+INNER JOIN osmetymology.wikidata w ON map.wikidata_id = w.itemid
+INNER JOIN osmetymology.wikidata w_country ON w.claims->'P27'->0->'mainsnak'->'datavalue'->'value'->>'id' = w_country.itemid
+CROSS JOIN LATERAL jsonb_array_elements(COALESCE(w.claims->'P106', '[]'::jsonb)) AS c(claim)
+INNER JOIN osmetymology.wikidata w_profession ON c.claim->'mainsnak'->'datavalue'->'value'->>'id' = w_profession.itemid
+WHERE l.featuretype IN('way','square')
+AND (w_profession.claims @@ '$.P31[*].mainsnak.datavalue.value.id == "Q66715801"' OR w_profession.claims @@ '$.P31[*].mainsnak.datavalue.value.id == "Q135106813"') -- Musiker eller profession, som er "musical occupation" eller "musikalsk profession"
+AND CAST(w_country.claims->'P2131'->0->'mainsnak'->'datavalue'->'value'->'amount' #>> '{}' AS bigint) > 500_000_000_000 -- Bruttonationalprodukt på over 500 milliarder, antager dollars
+AND w_country.claims @@ '$.P463[*].mainsnak.datavalue.value.id == "Q7184"' -- Medlem af NATO</code>
+					</pre>
+					<aside class="notes">
+						Forbedringer: Tjek valuta, tjek alle BNP-år, tjek alle lande en person er statsborger i<br>
+						Maurice Ravel, Frédéric Chopin, Prins Henrik, Gunnar Wennerberg, Monica Zetterlund, Carl Michael
+						Bellman, Dietrich Buxtehude, Jacques Offenbach, Nikolaus Ludwig von Zinzendorf, Dexter Gordon,
+						Richard Boone, Victor Borge, Ernie Wilkins, Ben Webster, Oscar Pettiford, Thad Jones, Kenny Drew
+					</aside>
 				</section>
 			</section>
 			<section>
@@ -296,33 +337,18 @@
 				</section>
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Etymologi i OpenStreetMap</h1>
-					<h3>OpenStreetMap</h3>
-					<ul>
-						<li>Åbent og frit kort over hele verden</li>
-						<li>Oprettet og vedligeholdt af frivillige, m.m.</li>
-						<li>Vektorbaseret med nøgler og værdier</li>
-						<li>Både fysiske karakteristika og metadata</li>
-					</ul>
-					<aside class="notes">
-						Åben datalicens, kan bruges af alle, også kommercielt.<br>
-						Kan downloades! OpenStreetMap-hjemmesiden er blot én indgang.<br>
-						Værktøjer, fra vektordata til grafik<br>
-						Virksomheder og myndigheder bidrager også.<br>
-						Fysisk karakteristika: Antal vejbaner, overfladebelægning<br>
-						Metadata: Fartgrænse, opførelsesår, etymologi
-					</aside>
-				</section>
-				<section data-auto-animate>
-					<h1 class="r-fit-text">Etymologi i OpenStreetMap</h1>
 					<div class="r-stretch">
-						<a href="https://www.openstreetmap.org/node/11645658019#map=19/55.710801/12.564441">
-							<img src="img/klimadatastyrelsen.png">
-						</a>
+						<a href="https://www.openstreetmap.org/way/285634241#map=16/57.04339/9.91399"><img
+								src="img/osm_aalborg.png"></a>
 					</div>
 					<aside class="notes">
-						Punkter, linjer og relationer (samlinger)<br>
-						Alt består af etablerede key-value-sæt<br>
-						Klimadatastyrelsen kunne have "Klima" og "Data" som etymologiske emner.
+						Åbent og frit kort over hele verden, også til kommerciel brug<br>
+						"Wikipedia for kort"<br>
+						Oprettet og vedligeholdt af firmaer, myndigheder, frivillige, m.m.<br>
+						Kan downloades! OpenStreetMap-hjemmesiden er blot én indgang.<br>
+						Vektorbaseret med nøgler og værdier<br>
+						Både fysiske karakteristika: Antal vejbaner, overfladebelægning<br>
+						Og metadata: Fartgrænse, opførelsesår, etymologi
 					</aside>
 				</section>
 				<section data-auto-animate>
@@ -332,14 +358,13 @@
 						<li>Vejgeometri</li>
 						<li>Navn</li>
 						<li>Etymologi
-							<ul class="fragment">
+							<ul>
 								<li>Fritekst</li>
 								<li>Wikipedia-artikel</li>
-								<li><span class="fragment highlight-red">Wikidata-emne</span></li>
+								<li><span style="color: red">Wikidata-emne</span></li>
 							</ul>
 						</li>
 					</ul>
-					<p class="fragment">Ophav til vejnavn er angivet for over 45.000 veje i Danmark!</p>
 					<aside class="notes">
 						En vej er alle vejstykker med samme navn og etymologi inden for en kommune<br>
 						(Gruppering på navne, emner og kommuner)<br>
@@ -351,13 +376,6 @@
 						Diverse marker m.m., der ikke retfærdiggør eget emne<br>
 						45.000 navne - mange opdateret af mig
 					</aside>
-				</section>
-				<section data-auto-animate>
-					<h1 class="r-fit-text">Etymologi i OpenStreetMap</h1>
-					<h3>OpenStreetMap - eksempel</h3>
-					<div class="r-stretch">
-						<img src="img/Helle_Godtveds_Plads.png">
-					</div>
 				</section>
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Etymologi i OpenStreetMap</h1>
@@ -397,7 +415,7 @@
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Etymologi i OpenStreetMap</h1>
 					<h3>Wikidata</h3>
-					<p class="fragment">Wikidata er emner med data som <code>key</em>⇒value</em></code></p>
+					<p>Wikidata er emner med data som <code>key</em>⇒value</em></code></p>
 					<p class="fragment"><em>Helle Gotved</em> (<a
 							href="https://www.wikidata.org/wiki/Q12316068">Q12316068</a>):</p>
 					<table class="fragment" style="font-size: 0.6em;">
@@ -482,7 +500,6 @@
 					<ul>
 						<li>Lærkevej</li>
 						<li>Holbergstien, Randers</li>
-						<li>Amerikavej, København</li>
 						<li>Vejlegade, Nakskov</li>
 						<li>Ananasvænget, Odense</li>
 						<li>Fuglebakken, Vordingborg</li>
@@ -490,10 +507,9 @@
 						<li>Hendriksholm, Rødovre</li>
 					</ul>
 					<aside class="notes">
-						Lærker: Ca. 60 % fugle, 40 % træer<br>
+						Lærker: Ca. 70 % fugle, 30 % træer<br>
 						(og vi har styr på, hvad er der opkaldt efter hvad)<br>
 						Holberg: Den tredje Ludvig Holberg<br>
-						Amerikavej: Amerikamøllen, amerikansk konsul<br>
 						Vejlegade: "vejle" er et vadested<br>
 						Ananasvænget: Rød Ananas, æblesort<br>
 						(givet ud fra lokal kontekst med andre æblesort-veje)<br>
@@ -512,16 +528,13 @@
 				</section>
 			</section>
 			<section>
-				<section data-auto-animate>
-					<h1 class="r-fit-text">Samarbejde om indhold</h1>
-				</section>
-				<section data-auto-animate>
-					<h1 class="r-fit-text">Samarbejde om indhold</h1>
-					<ul>
-						<li>Fra OpenStreetMap til KDS …</li>
-						<li class="fragment">… og fra KDS til OpenStreetMap?</li>
-					</ul>
-				</section>
+				<h1>Hent data!</h1>
+				<ul>
+					<li>Fortegnelse, hent som FlatGeobuf eller CSV</li>
+					<li>OpenStreetMap, fri licens</li>
+					<li>Wikidata, fri licens</li>
+					<li>Website, Open Source</li>
+				</ul>
 			</section>
 			<section>
 				<h3>Spørgsmål?</h3>
@@ -533,28 +546,17 @@
 						<ul>
 							<li><a href="https://navne.findvej.dk/kommuner/">Kønsfordeling på kommuneniveau</a></li>
 							<li><a href="https://github.com/PeterBrodersen/osmetymology/blob/main/Resources.md">Kilder
-									og ressourcer, linkoversigt</a></li>
-							<li><a href="https://github.com/PeterBrodersen/osmetymology">osmetymology</a>
-								(GitHub-projekt for website)</li>
+									og ressourcer</a></li>
+							<li><a href="https://github.com/PeterBrodersen/osmetymology">GitHub-projekt</a>
 						</ul>
 					</li>
 					<li><a href="https://www.openstreetmap.org/">OpenStreetMap</a>
 						<ul>
-							<li><a href="https://www.openstreetmap.org/node/11645658019">Klimadatastyrelsen</a>, punkt
-								11645658019</li>
-							<li><a
-									href="https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata"><code>name:etymology:wikidata</code></a>
-								(<a
-									href="https://taginfo.geofabrik.de/europe:denmark/keys/name%3Aetymology%3Awikidata#chronology">kronologi</a>)
-							</li>
+							<a href="https://mapcomplete.org/etymology.html">MapComplete</a>, online-værktøj til at
+							tilføje etymologi-data
 						</ul>
 					</li>
-					<li><a href="https://www.wikidata.org/">Wikidata</a>
-						<ul>
-							<li><a href="https://www.wikidata.org/wiki/Q29788118">Klimadatastyrelsen</a>, emne Q29788118
-							</li>
-						</ul>
-					</li>
+					<li><a href="https://www.wikidata.org/">Wikidata</a></li>
 				</ul>
 			</section>
 		</div>
