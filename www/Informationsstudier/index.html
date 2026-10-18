@@ -94,11 +94,11 @@
 
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Åbne data og offentlige API'er</h1>
-					<h3>Åbne datakilder</h3>
+					<h3>Datakilder</h3>
 					<ul>
 						<li>Myndigheder (stat, regioner, kommuner)</li>
 						<li>Crowdsourced data (Wikipedia, OpenStreetMap)</li>
-						<li>Private virksomheder</li>
+						<li>Private virksomheder (Google, Salling, m.m.)</li>
 					</ul>
 					<aside class="notes">
 						Myndigheder har en formidlingsopgave, der strækker
@@ -126,11 +126,26 @@
 
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Åbne data og offentlige API'er</h1>
+					<h3>Datakvalitet?</h3>
+					<div class="r-stretch">
+						<img src="img/letters_success.jpg"
+							alt="Bogstaver sat forkert i skumgummi-legeplade">
+					</div>
+					<aside class="notes">
+						Pixeleret, i lighed med kaserner m.m.<br>
+						Ikke bare et website, men også API til automatisk at hente skråfotos
+						ud fra fx koordinater. Metadata for position, kameravinkel, m.m.
+					</aside>
+				</section>
+
+
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Åbne data og offentlige API'er</h1>
 					<h3>Licenser</h3>
 					<ul>
 						<li>Creative Commons, (fx CC BY 4.0)</li>
 						<li>Open Database License (ODbL)</li>
-						<li>"Må ikke bruges kommercielt/til markedsføring/..."</li>
+						<li>"Må ikke bruges kommercielt, til markedsføring, af onde mennesker, …"</li>
 					</ul>
 					<aside class="notes">
 						Dataforsyningen under Klimadatastyrelsen bruger generelt CC<br>
@@ -152,11 +167,33 @@
 								<li>Luftfotos og skråfotos</li>
 								<li>Administrative grænser</li>
 								<li>Højdekort</li>
-								<li>CVR-data</li>
+								<li>Støjkort</li>
 							</ul>
 						</li>
 					</ul>
+					<aside class="notes">
+						Ejendomsdata: BBR, geometri, m.m.<br>
+						Højdekort: Danmark bliver laserscannet regelmæssigt.<br>
+						Støjkort: Miljøstyrelsen.<br>
+						QGIS-eksempel på punktskyer!
+					</aside>
 				</section>
+
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Åbne data og offentlige API'er</h1>
+					<a href="https://skraafoto.dataforsyningen.dk/?center=724434.93%2C6175755.61&item=2025_84_40_3_0053_00001658_100mm&year=2025&orientation=south"
+						class="r-stretch">
+						<img src="img/skråfoto_københavns_rådhus.png"
+							alt="Website for skråfotos, viser Københavns Rådhus">
+					</a>
+					<aside class="notes">
+						QGIS-eksempel på punktskyer!<br>
+						Pixeleret, i lighed med kaserner m.m.<br>
+						Ikke bare et website, men også API til automatisk at hente skråfotos
+						ud fra fx koordinater. Metadata for position, kameravinkel, m.m.
+					</aside>
+				</section>
+
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Åbne data og offentlige API'er</h1>
 					<h3>Grunddata</h3>
@@ -170,17 +207,79 @@
 						<li>Andre data
 							<ul>
 								<li>Vejrdata</li>
-								<li>Miljø</li>
+								<li>Miljødata</li>
+								<li>Arkæologiske data</li>
 							</ul>
 						</li>
 					</ul>
+					<aside class="notes">
+						Opslag i Elasticsearch<br>
+						Regnskaber i XBRL-format<br>
+						Vejrdata fra DMI<br>
+					</aside>
 				</section>
+
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Åbne data og offentlige API'er</h1>
+					<h3>Nationalmuseet</h3>
+					<p>Søgning på Guldhornene: Wikipedia dukker op før Nationalmuseet</p>
+					<ul>
+						<li class="fragment fade-in">Prøve at komme i top på Google med SEO?</li>
+						<li class="fragment fade-in">Være ligeglad?</li>
+						<li class="fragment fade-in">Samarbejde med Wikipedia?</li>
+					</ul>
+					<aside class="notes">
+						Nationalmuseet har en formidlingsmæssig opgave. Nationalmuseet får ikke noget
+						ud af, at der står forkerte oplysninger på Wikipedia.
+					</aside>
+				</section>
+
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Åbne data og offentlige API'er</h1>
+					<img src="img/Gundestrup_cauldron.jpg" class="r-stretch" alt="Gundestrupkarret på Nationalmuseet">
+					<p style="font-size: small;">
+						<a href="https://commons.wikimedia.org/wiki/File:Gundestrup_cauldron.jpg">Knud Winckelmann and
+							Nationalmuseet, CC BY-SA 3.0</a>
+					</p>
+					<aside class="notes">
+						2011, Wikipedia Loves Nationalmuseet. Vi fik lov til at tage billeder med stativ, m.m.
+					</aside>
+				</section>
+
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Åbne data og offentlige API'er</h1>
+					<h3>Private virksomheder</h3>
+					<img src="img/salling_group_api.png" class="r-stretch" alt="Salling Group API">
+					<p style="font-size: small;">
+						<a href="https://developer.sallinggroup.dev/">Salling Group developer portal</a>
+					</p>
+					<aside class="notes">
+						2011, Wikipedia Loves Nationalmuseet. Vi fik lov til at tage billeder med stativ, m.m.
+					</aside>
+				</section>
+
 			</section>
 
 			<section>
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Historisk gennemgang af åbne geodata</h1>
 				</section>
+
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Historisk gennemgang af åbne geodata</h1>
+
+					<a href="https://web.archive.org/web/20050804160614/http://www.kms.dk/C1256ADF004C9677/(AllDocsByDocId)/F1266FCEBB3F6AFCC1256C700037726C"
+						class="r-stretch">
+						<img src="img/KMS.png" alt="Kort- og Matrikelstyrelsen, gammelt website">
+
+					</a>
+					<aside class="notes">
+						Pixeleret, i lighed med kaserner m.m.<br>
+						Ikke bare et website, men også API til automatisk at hente skråfotos
+						ud fra fx koordinater. Metadata for position, kameravinkel, m.m.
+					</aside>
+				</section>
+
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Historisk gennemgang af åbne geodata</h1>
 					<h3>Kort- og Matrikelstyrelsen</h3>
@@ -193,19 +292,67 @@
 
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Historisk gennemgang af åbne geodata</h1>
+					<h3><a href="https://www.ft.dk/samling/20121/lovforslag/L71/BEH1-23/forhandling.htm">Grunddata, L71
+							(2012-2013)</a></h3>
+					<ul>
+						<li class="fragment">Vedtaget af et enigt folketing 19. december 2012.</li>
+						<li class="fragment">Grunddata omfatter bl.a. GIS-data (ortofoto, højdemodel, GeoDanmark-data,
+							m.m.)</li>
+						<li class="fragment">Data officielt tilgængelige fra 1. januar 2013</li>
+						<li class="fragment">CVR-data blev også frikøbt 1. januar 2013</li>
+						<li class="fragment">Nye virksomheder starter op.</li>
+					</ul>
+					<aside class="notes">
+						Positivt at se, at partier kan være konstruktive og blive enige.<br>
+						Partier havde forskellige forbehold (fx privatliv, eksisterende virksomheders
+						økonomi og forretning, m.m.)<br>
+						Nye virksomheder: Septima!
+					</aside>
 				</section>
 
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Historisk gennemgang af åbne geodata</h1>
-					<h3>2011: Lov om Grunddata</h3>
-					<p>L71</p>
-					<p>Alle partier stemte for</p>
-					<p>Nye virksomheder starter op.</p>
-					<p>Heriblandt Septima.</p>
+					<div class="r-stretch">
+						<img src="img/grunddata_harddisks.jpg" alt="Peter med harddisks i hånden">
+					</div>
 					<aside class="notes">
-						Positivt at se, at partier kan være konstruktive og blive enige.
+						Fordi al data nu blev frit tilgængeligt for alle, ville belastningen på
+						systemet også stige voldsomt i begyndelsen. Her vurderede relevante styrelser,
+						at det var billigere at sende harddiske til de 20-30 største interessenter, så
+						den umiddelbare belastning kunne blive reduceret, og folk kunne arbejde med data
+						offline.
 					</aside>
 				</section>
+
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Historisk gennemgang af åbne geodata</h1>
+					<h3>Men hvad med regnskaberne?</h3>
+					<ul>
+						<li class="fragment">Regnskaber kostede penge:
+							<ul>
+								<li>PDF: 37 kr.</li>
+								<li>XBRL: 15 kr.</li>
+							</ul>
+						</li>
+						<li class="fragment">Ingen mængderabat</li>
+						<li class="fragment">Ingen ophavsret</li>
+						<li class="fragment">De jure-monopol (Erhvervsstyrelsen)</li>
+						<li class="fragment">De facto-monopol (Experian)</li>
+					</ul>
+				</section>
+
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Historisk gennemgang af åbne geodata</h1>
+					<h3>Workshop om erhvervsdata</h3>
+					<div class="fragment">
+					<p>Erhvervsstyrelsen inviterede myndigheder, virksomheder, journalister, græsrodsfolk til workshop
+						19. december 2013.</p>
+					<p>Ingen ku' li' datamonopolister!</p>
+					<p>Staten fik dokumenteret ønske og behov fra erhvervslivet.</p>
+					<p>Regnskabsdata blev frit tilgængelige i 2015<span class="fragment fade-up">-ish.</span></p>
+					</div>
+				</section>
+
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Historisk gennemgang af åbne geodata</h1>
 					<h3>2011: Lov om Grunddata</h3>
