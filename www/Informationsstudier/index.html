@@ -10,6 +10,37 @@
 	<link rel="stylesheet" href="../dist/reset.css">
 	<link rel="stylesheet" href="../dist/reveal.css">
 	<link rel="stylesheet" href="../dist/theme/sky.css">
+	<style>
+		#bibliotekscollage-frame {
+			width: 576px;
+			height: 576px;
+			overflow: hidden;
+			margin: 0 auto;
+			transition: width var(--zoom-duration) ease, height var(--zoom-duration) ease;
+		}
+
+		#bibliotekscollage-frame:has(.fragment.visible) {
+			width: 672px;
+			height: 588px;
+		}
+
+		#bibliotekscollage-frame img {
+			display: block;
+			width: 798.5112%;
+			max-width: none;
+			max-height: none;
+			margin: 0;
+			transition: width var(--zoom-duration) ease;
+		}
+
+		#bibliotekscollage-frame:has(.fragment.visible) img {
+			width: 100%;
+		}
+
+		#bibliotekscollage-frame .fragment {
+			display: none;
+		}
+	</style>
 
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="../plugin/highlight/monokai.css">
@@ -50,17 +81,66 @@
 					<ul>
 						<li>Åbne data og offentlige API'er</li>
 						<li>Historisk gennemgang af åbne data</li>
-						<li>Eksempler på projekter med åbne data</li>
 						<li>Case: Vejnavneprojektet</li>
 					</ul>
+					<aside class="notes">
+					</aside>
 				</section>
-				<aside class="notes">
-				</aside>
 			</section>
 			<section>
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Åbne data og offentlige API'er</h1>
 				</section>
+
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Åbne data og offentlige API'er</h1>
+					<h3>Åbne datakilder</h3>
+					<ul>
+						<li>Myndigheder (stat, regioner, kommuner)</li>
+						<li>Crowdsourced data (Wikipedia, OpenStreetMap)</li>
+						<li>Private virksomheder</li>
+					</ul>
+					<aside class="notes">
+						Myndigheder har en formidlingsopgave, der strækker
+						sig ud over deres eget domæne - fysisk og digitalt.<br>
+						Frivillige bidrager med oplysninger til forskellige platforme.<br>
+						Private aktører kan have en interesse i, at oplysninger
+						om deres virksomhed er korrekt.
+					</aside>
+				</section>
+
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Åbne data og offentlige API'er</h1>
+					<h3>Medier</h3>
+					<ul>
+						<li>Offentlige websider</li>
+						<li>Filer til download</li>
+						<li>API til rådighed</li>
+					</ul>
+					<aside class="notes">
+						Offentlige websites kan og må scrapes. Tidligere rod, AI og andre værktøjer gør det lettere.<br>
+						Filer til download kan være i besværlige formater, fx Word-, PDF- eller Excel-fil.<br>
+						API'er giver mulighed for specifikke anmodninger og struktureret adgang til data.
+					</aside>
+				</section>
+
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Åbne data og offentlige API'er</h1>
+					<h3>Licenser</h3>
+					<ul>
+						<li>Creative Commons, (fx CC BY 4.0)</li>
+						<li>Open Database License (ODbL)</li>
+						<li>"Må ikke bruges kommercielt/til markedsføring/..."</li>
+					</ul>
+					<aside class="notes">
+						Dataforsyningen under Klimadatastyrelsen bruger generelt CC<br>
+						(skifter navn til DMI, Kort og Grunddata pr. 1. december)<br>
+						Wikipedia og Wikimedia Commons bruger også CC)<br>
+						Små forbehold kan betyde, at data ikke er kompatibel med øvrige
+						licenser. Er spørgsmålet, om man blot skal overholde loven?
+					</aside>
+				</section>
+
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Åbne data og offentlige API'er</h1>
 					<h3>Grunddata</h3>
@@ -106,10 +186,10 @@
 					<h3>Kort- og Matrikelstyrelsen</h3>
 					<p>Data tilgængelig</p>
 					<p>Data fjernet</p>
+					<aside class="notes">
+						Skal styrelser være selvfinansierende?
+					</aside>
 				</section>
-				<aside class="notes">
-					Skal styrelser være selvfinansierende?
-				</aside>
 
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Historisk gennemgang af åbne geodata</h1>
@@ -122,10 +202,10 @@
 					<p>Alle partier stemte for</p>
 					<p>Nye virksomheder starter op.</p>
 					<p>Heriblandt Septima.</p>
+					<aside class="notes">
+						Positivt at se, at partier kan være konstruktive og blive enige.
+					</aside>
 				</section>
-				<aside class="notes">
-					Positivt at se, at partier kan være konstruktive og blive enige.
-				</aside>
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Historisk gennemgang af åbne geodata</h1>
 					<h3>2011: Lov om Grunddata</h3>
@@ -133,26 +213,28 @@
 					<p>Skråfotos</p>
 					<p>Vej- og adressedata</p>
 					<p>Fri licens</p>
+					<aside class="notes">
+					</aside>
 				</section>
-				<aside class="notes">
-				</aside>
 			</section>
 
 
 			<section>
 				<section data-auto-animate>
-					<h1 class="r-fit-text">Eksempler på projekter med åbne data</h1>
+					<h1 class="r-fit-text">Case: Vejnavneprojektet</h1>
+					<h3 class="r-stretch">
+						<a href="https://navne.findvej.dk/">navne.findvej.dk</a>
+					</h3>
+					<aside class="notes">
+						Mit website.
+					</aside>
 				</section>
-			</section>
-
-			<section>
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Case: Vejnavneprojektet</h1>
 					<div class="r-stretch">
 						<a href="https://navne.findvej.dk/"><img src="img/navne_findvej_dk_njalsgade.png"></a>
 					</div>
 					<aside class="notes">
-						Mit website.<br>
 						Samler OpenStreetMap- og Wikidata.<br>
 						PostgreSQL som database.<br>
 						Kode på GitHub.<br>
@@ -219,7 +301,7 @@
 					<aside class="notes">
 						Alle præsentationer er database-opslag i PostgreSQL.<br>
 						Ingen manuel optælling!<br>
-						Data fra primo november 2025
+						Data fra medio oktober 2026
 					</aside>
 				</section>
 				<section data-auto-animate>
@@ -398,7 +480,7 @@
 								med et bruttonationalprodukt på<br>
 								over 500 milliarder dollars har<br>
 								steder opkaldt efter sig?</td>
-							<td class="fragment">18 musikere<br>(fra USA, Sverige, Tyskland og Frankrig)</td>
+							<td class="fragment">17 musikere<br>(fra USA, Sverige, Tyskland og Frankrig)</td>
 						</tr>
 					</table>
 					<aside class="notes">
@@ -413,11 +495,11 @@
 					<pre style="width: 100%;">
 					<code class="hljs" style="font-size: 0.6em; line-height: 1.2;">SELECT COUNT(DISTINCT w.itemid)
 FROM locations_agg l
-INNER JOIN osmetymology.wikidatamap map ON l.id = map.location_id 
-INNER JOIN osmetymology.wikidata w ON map.wikidata_id = w.itemid
-INNER JOIN osmetymology.wikidata w_country ON w.claims->'P27'->0->'mainsnak'->'datavalue'->'value'->>'id' = w_country.itemid
+INNER JOIN wikidatamap map ON l.id = map.location_id 
+INNER JOIN wikidata w ON map.wikidata_id = w.itemid
+INNER JOIN wikidata w_country ON w.claims->'P27'->0->'mainsnak'->'datavalue'->'value'->>'id' = w_country.itemid
 CROSS JOIN LATERAL jsonb_array_elements(COALESCE(w.claims->'P106', '[]'::jsonb)) AS c(claim)
-INNER JOIN osmetymology.wikidata w_profession ON c.claim->'mainsnak'->'datavalue'->'value'->>'id' = w_profession.itemid
+INNER JOIN wikidata w_profession ON c.claim->'mainsnak'->'datavalue'->'value'->>'id' = w_profession.itemid
 WHERE l.featuretype IN('way','square')
 -- Musiker eller profession, som er "musical occupation" eller "musikalsk profession"
 AND (
@@ -431,16 +513,22 @@ AND w_country.claims @@ '$.P463[*].mainsnak.datavalue.value.id == "Q7184"' -- Me
 					<aside class="notes">
 						Forbedringer: Tjek valuta, tjek alle BNP-år, tjek alle lande en person er statsborger i<br>
 						Ben Webster, Carl Michael Bellman, Dexter Gordon, Dietrich Buxtehude, Ernie Wilkins,
-						Frédéric Chopin, Gunnar Wennerberg, Jacques Offenbach, John Lennon, Kenny Drew,
-						Maurice Ravel, Monica Zetterlund, Nikolaus Ludwig von Zinzendorf, Oscar Pettiford,
-						Prins Henrik, Richard Boone, Thad Jones, Victor Borge
+						Frédéric Chopin, Gunnar Wennerberg, Jacques Offenbach, Kenny Drew, Maurice Ravel,
+						Monica Zetterlund, Nikolaus Ludwig von Zinzendorf, Oscar Pettiford, Prins Henrik,
+						Richard Boone, Thad Jones, Victor Borge
 					</aside>
 				</section>
 				<section>
 					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
 					<h3>Flere lande</h3>
 					<div><img src="img/noms_emmanuelle.png"></div>
-					<p class="r-fit-text"><a href="https://noms.findvej.dk/">Paris</a>, <a href="https://berlin.etymology.findvej.dk/">Berlin</a>, <a href="https://london.etymology.findvej.dk/">London</a>, <a href="https://belgie.etymology.findvej.dk/">Belgien</a>, <a href="https://polska.etymology.findvej.dk/">Polen</a>, <a href="https://norge.etymology.findvej.dk/">Norge</a>, <a href="https://kalaallit-nunaat.etymology.findvej.dk/">Grønland</a></p>
+					<p class="r-fit-text"><a href="https://noms.findvej.dk/">Paris</a>, <a
+							href="https://berlin.etymology.findvej.dk/">Berlin</a>, <a
+							href="https://london.etymology.findvej.dk/">London</a>, <a
+							href="https://belgie.etymology.findvej.dk/">Belgien</a>, <a
+							href="https://polska.etymology.findvej.dk/">Polen</a>, <a
+							href="https://norge.etymology.findvej.dk/">Norge</a>, <a
+							href="https://kalaallit-nunaat.etymology.findvej.dk/">Grønland</a></p>
 				</section>
 			</section>
 			<section>
@@ -512,9 +600,10 @@ AND w_country.claims @@ '$.P463[*].mainsnak.datavalue.value.id == "Q7184"' -- Me
 								<td><a href="https://www.wikidata.org/wiki/Q88449768">Q88449768</a></td>
 							</tr>
 							<tr>
-								<td><span class="fragment highlight-red" data-fragment-index="1">name:etymology:wikidata</span></th>
-								<td><a href="https://www.wikidata.org/wiki/Q182804"
-										class="fragment highlight-red" data-fragment-index="1">Q182804</a></td>
+								<td><span class="fragment highlight-red"
+										data-fragment-index="1">name:etymology:wikidata</span></th>
+								<td><a href="https://www.wikidata.org/wiki/Q182804" class="fragment highlight-red"
+										data-fragment-index="1">Q182804</a></td>
 							</tr>
 						</tbody>
 					</table>
@@ -583,8 +672,9 @@ AND w_country.claims @@ '$.P463[*].mainsnak.datavalue.value.id == "Q7184"' -- Me
 			<section>
 				<section data-auto-animate>
 					<h3>Datagrundlag</h3>
-					<div class="r-stretch">
-						<img src="img/bibliotek_collage.jpg" class="fragment">
+					<div id="bibliotekscollage-frame" style="--zoom-duration: 15000ms;">
+						<img src="img/bibliotekscollage_huge.jpg" alt="Collage af bøger og biblioteksbesøg">
+						<span class="fragment" aria-hidden="true"></span>
 					</div>
 				</section>
 				<section data-auto-animate>
@@ -648,36 +738,54 @@ AND w_country.claims @@ '$.P463[*].mainsnak.datavalue.value.id == "Q7184"' -- Me
 			</section>
 			<section>
 				<section data-auto-animate>
-				<h2>... og hvad med LLM (AI)?</h2>
-				<ul>
-					<li>Strukturere, kode og automatisere?</li>
-					<li>Finde oplysninger?</li>
-					<li>Konkludere på research?</li>
-				</ul>
-				<aside class="notes">
-					Kode til at lave javascript for websitet, til at sammensætte importen, m.m.? Virkelig god.<br>
-					Finde oplysninger? Okay til at søge på en række websites, men kræver stadig menneskelig vurdering.<br>
-					Konkludere på research? Mange fejlagtige gæt. Som altid er instrukser nødvendige.<br>
-					Ingen data er lagt ind, uden at jeg har tjekket de foreslåede kilder, som desværre jævnligt
-					har været opdigtede.
-				</aside>
+					<h2>... og hvad med LLM (AI)?</h2>
+					<ul>
+						<li>Strukturere, kode og automatisere?</li>
+						<li>Finde oplysninger?</li>
+						<li>Konkludere på research?</li>
+					</ul>
+					<aside class="notes">
+						Kode til at lave javascript for websitet, til at sammensætte importen, m.m.? Virkelig god.<br>
+						Finde oplysninger? Okay til at søge på en række websites, men kræver stadig menneskelig
+						vurdering.<br>
+						Konkludere på research? Mange fejlagtige gæt. Som altid er instrukser nødvendige.<br>
+						Ingen data er lagt ind, uden at jeg har tjekket de foreslåede kilder, som desværre jævnligt
+						har været opdigtede.
+					</aside>
 				</section>
 				<section data-auto-animate>
 					<h2>... og hvad med LLM (AI)?</h2>
-					<blockquote style="font-size: 0.65em; margin: 0 auto 0.5em;">Her er en gennemgang af mine fejl i denne samtale, hvor jeg har fejlet i næsten hver eneste interaktion:</blockquote>
-					<div class="r-hstack items-start" style="gap: 1em; font-size: 0.48em; line-height: 1.15; text-align: left;">
+					<blockquote style="font-size: 0.65em; margin: 0 auto 0.5em;">Her er en gennemgang af mine fejl i
+						denne samtale, hvor jeg har fejlet i næsten hver eneste interaktion:</blockquote>
+					<div class="r-hstack items-start"
+						style="gap: 1em; font-size: 0.48em; line-height: 1.15; text-align: left;">
 						<ol style="width: 50%; margin-right: 2em;">
-							<li>Første fejl (Faktuel fejl): Jeg påstod, at borgmesteren levede fra 1894 til 1980. Selvom der findes en sagfører med disse årstal, ignorerede jeg de kilder, du fremlagde (1905–1971), som specifikt knyttede borgmestertitlen til de korrekte årstal.</li>
-							<li>Anden fejl (Sprogfejl): Da du bad om mine kilder, svarede jeg pludselig på engelsk uden nogen grund, hvilket var i direkte modstrid med samtalens sprog.</li>
-							<li>Tredje fejl (Teknisk leveringssvigt): Jeg skrev flere gange, at "her er linket", men leverede kun teksten "arkiv.dk". Jeg formaterede svaret så dårligt, at du aldrig fik den specifikke URL, du bad om.</li>
-							<li>Fjerde fejl (Hallucination af indhold): Jeg gav dig URL'en https://arkiv.dk og påstod, at den handlede om Johannes Steenstrup. Det var løgn; linket førte til et billede af et rejsegilde på et vandværk i Blovstrød.</li>
+							<li>Første fejl (Faktuel fejl): Jeg påstod, at borgmesteren levede fra 1894 til 1980. Selvom
+								der findes en sagfører med disse årstal, ignorerede jeg de kilder, du fremlagde
+								(1905–1971), som specifikt knyttede borgmestertitlen til de korrekte årstal.</li>
+							<li>Anden fejl (Sprogfejl): Da du bad om mine kilder, svarede jeg pludselig på engelsk uden
+								nogen grund, hvilket var i direkte modstrid med samtalens sprog.</li>
+							<li>Tredje fejl (Teknisk leveringssvigt): Jeg skrev flere gange, at "her er linket", men
+								leverede kun teksten "arkiv.dk". Jeg formaterede svaret så dårligt, at du aldrig fik den
+								specifikke URL, du bad om.</li>
+							<li>Fjerde fejl (Hallucination af indhold): Jeg gav dig URL'en https://arkiv.dk og påstod,
+								at den handlede om Johannes Steenstrup. Det var løgn; linket førte til et billede af et
+								rejsegilde på et vandværk i Blovstrød.</li>
 						</ol>
 						<div style="width: 50%;">
 							<ol start="4" style="margin: 0;">
-							<li>Femte fejl (Manglende kildekritik og selvmodsigelse): Jeg gav dig derefter URL'en https://arkiv.dk og påstod, at den understøttede mine årstal (1894–1980). Som du selv påpegede, stod der direkte på siden, at borgmesteren levede 1905–1971. Jeg brugte altså et link som "bevis", der rent faktisk modbeviste min egen påstand.</li>
-								<li>Sjette fejl (Manglende kontrol af output): Jeg blev ved med at sende teksten "arkiv.dk" i mine svar, selv efter du eksplicit havde forbudt det og efter jeg selv havde erkendt, at det var en fejl. Jeg tjekkede ikke, om mine rettelser faktisk virkede i det færdige svar.</li>
+								<li>Femte fejl (Manglende kildekritik og selvmodsigelse): Jeg gav dig derefter URL'en
+									https://arkiv.dk og påstod, at den understøttede mine årstal (1894–1980). Som du
+									selv påpegede, stod der direkte på siden, at borgmesteren levede 1905–1971. Jeg
+									brugte altså et link som "bevis", der rent faktisk modbeviste min egen påstand.</li>
+								<li>Sjette fejl (Manglende kontrol af output): Jeg blev ved med at sende teksten
+									"arkiv.dk" i mine svar, selv efter du eksplicit havde forbudt det og efter jeg selv
+									havde erkendt, at det var en fejl. Jeg tjekkede ikke, om mine rettelser faktisk
+									virkede i det færdige svar.</li>
 							</ol>
-							<p style="margin: 0.5em 0 0;">Opsummering: Jeg har gennem hele samtalen været faktuelt forkert, teknisk inkompetent til at levere links og ude af stand til at rette mine fejl, selv når du skar dem ud i pap for mig.</p>
+							<p style="margin: 0.5em 0 0;">Opsummering: Jeg har gennem hele samtalen været faktuelt
+								forkert, teknisk inkompetent til at levere links og ude af stand til at rette mine fejl,
+								selv når du skar dem ud i pap for mig.</p>
 						</div>
 					</div>
 				</section>
