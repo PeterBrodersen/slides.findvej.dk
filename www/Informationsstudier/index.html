@@ -208,7 +208,8 @@
 					<aside class="notes">
 						Hjørring Kommune: 2 kvinder, 107 mænd (inkl. fiktive: 15 kvinder, 127 mænd)<br>
 						Den ene kvinde er ægtefælle til mand, som der også er vej opkaldt efter.<br>
-						Den anden kvinde producerede krydret brændevin.
+						Den anden kvinde producerede krydret brændevin.<br>
+						Forældet data: 3 kvinder, også Jomfru Maria
 					</aside>
 				</section>
 			</section>
@@ -227,27 +228,23 @@
 					<table class="fragment" style="font-size: 0.6em;">
 						<tr>
 							<td>Mest brugte emne</td>
-							<td>birk (354 veje)</td>
-						</tr>
-						<tr>
-							<td>Mest udbredte emne</td>
-							<td>birk<br>rose (92 kommuner)</td>
+							<td>birk (363 veje, 93 kommuner)</td>
 						</tr>
 						<tr>
 							<td>Mest udbredte person</td>
-							<td>N.F.S. Grundtvig<br>St. St. Blicher (36 kommuner)</td>
+							<td>St. St. Blicher (37 kommuner)</td>
 						</tr>
 						<tr>
 							<td>Mest udbredte nulevende person</td>
-							<td>Margrethe II (14 kommuner)</td>
+							<td>Margrethe II (15 kommuner)</td>
 						</tr>
 						<tr>
 							<td>Antal forskellige mennesker</td>
-							<td>3.289 mennesker</td>
+							<td>3.919 mennesker</td>
 						</tr>
 						<tr>
 							<td>Mest udbredte profession</td>
-							<td>Politiker (372 personer)</td>
+							<td>Politiker (408 personer)</td>
 						</tr>
 					</table>
 					<aside class="notes">
@@ -257,7 +254,7 @@
 						(St. St. Blicher, Grundtvig, Jeppe Aakjær, B.S. Ingemann, Thomas Kingo)<br>
 						Andre nulevende: Kongelige, sportsfolk, Bertel Haarder, Bjørn Nørgaard<br>
 						Men altså ikke længere Johnny Madsen<br>
-						Næste professioner: forfatter (241), digter (160), kunstmaler (141), landmand (127)
+						Næste professioner: forfatter (297), landmand (195), digter (167), kunstmaler (166)
 					</aside>
 				</section>
 				<section data-auto-animate>
@@ -279,7 +276,7 @@
 					<h3 class="r-fit-text">Undgå veje opkaldt efter mænd</h3>
 					<div class="r-stretch">
 						<a
-							href="https://osrm.findvej.dk/nomales/?z=16&center=55.667039%2C12.533705&loc=55.665580%2C12.529242&loc=55.665435%2C12.530379&hl=da&alt=0"><img
+							href="https://osrm.findvej.dk/nomales/?z=16&center=55.667353%2C12.537096&loc=55.665580%2C12.529242&loc=55.665435%2C12.530379&hl=da&alt=0&scale=metric&ly=openstreetmap.org&profile=0"><img
 								src="img/osrm_undgå_mænd.png"></a>
 					</div>
 					<aside class="notes">
@@ -366,8 +363,8 @@
 					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
 					<h3>Total vejlængde i Danmark</h3>
 					<ul>
-						<li>Kvinder: 398 km</li>
-						<li>Mænd: 2.788 km</li>
+						<li>Kvinder: 285 km</li>
+						<li>Mænd: 2.703 km</li>
 						<li class="fragment">Hankønsdyr: 11 km
 							<ul class="fragment">
 								<li>Hankønsdyr? <a href="Q27688665">Bambi</a>, <a
@@ -385,14 +382,14 @@
 				</section>
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
-					<p>De svar, I har ventet på!</p>
+					<p>Flere vilkårlige strukturerede opslag</p>
 					<table class="fragment" style="font-size: 0.6em;">
 						<tr>
 							<td>Lærkevej, fugl eller træ?</td>
 							<td class="fragment">70 % fugl, 30 % træ</td>
 						</tr>
 						<tr class="fragment">
-							<td>Borgmestre,<br>Konservative eller socialdemokratiske?</td>
+							<td>Borgmestre, parti?</td>
 							<td class="fragment">Socialdemokratiet (29 borgmestre)<br>Venstre (14
 								borgmestre)<br>Konservative (12 borgmestre)</td>
 						</tr>
@@ -401,20 +398,20 @@
 								med et bruttonationalprodukt på<br>
 								over 500 milliarder dollars har<br>
 								steder opkaldt efter sig?</td>
-							<td class="fragment">17 musikere<br>(fra USA, Sverige, Tyskland og Frankrig)</td>
+							<td class="fragment">18 musikere<br>(fra USA, Sverige, Tyskland og Frankrig)</td>
 						</tr>
 					</table>
 					<aside class="notes">
 						Fortsat rene databaseopslag<br>
 						<!-- copilot forslag, forkert: Svarene er: Træ, konservative, nul -->
-						NATO-lande: USA, Sverige, Tyskland, Frankrig)<br>
+						NATO-lande: USA, Sverige, Tyskland, Frankrig<br>
 					</aside>
 				</section>
 				<section>
 					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
 					<p>SQL for musiker-spørgsmålet</p>
-					<pre>
-					<code class="hljs" style="font-size: 0.4em;">SELECT COUNT(DISTINCT w.itemid)
+					<pre style="width: 100%;">
+					<code class="hljs" style="font-size: 0.6em; line-height: 1.2;">SELECT COUNT(DISTINCT w.itemid)
 FROM locations_agg l
 INNER JOIN osmetymology.wikidatamap map ON l.id = map.location_id 
 INNER JOIN osmetymology.wikidata w ON map.wikidata_id = w.itemid
@@ -422,16 +419,28 @@ INNER JOIN osmetymology.wikidata w_country ON w.claims->'P27'->0->'mainsnak'->'d
 CROSS JOIN LATERAL jsonb_array_elements(COALESCE(w.claims->'P106', '[]'::jsonb)) AS c(claim)
 INNER JOIN osmetymology.wikidata w_profession ON c.claim->'mainsnak'->'datavalue'->'value'->>'id' = w_profession.itemid
 WHERE l.featuretype IN('way','square')
-AND (w_profession.claims @@ '$.P31[*].mainsnak.datavalue.value.id == "Q66715801"' OR w_profession.claims @@ '$.P31[*].mainsnak.datavalue.value.id == "Q135106813"') -- Musiker eller profession, som er "musical occupation" eller "musikalsk profession"
-AND CAST(w_country.claims->'P2131'->0->'mainsnak'->'datavalue'->'value'->'amount' #>> '{}' AS bigint) > 500_000_000_000 -- Bruttonationalprodukt på over 500 milliarder, antager dollars
+-- Musiker eller profession, som er "musical occupation" eller "musikalsk profession"
+AND (
+	w_profession.claims @@ '$.P31[*].mainsnak.datavalue.value.id == "Q66715801"'
+	OR w_profession.claims @@ '$.P31[*].mainsnak.datavalue.value.id == "Q135106813"'
+)
+-- Bruttonationalprodukt på over 500 milliarder, antager dollars
+AND CAST(w_country.claims->'P2131'->0->'mainsnak'->'datavalue'->'value'->'amount' #>> '{}' AS bigint) > 500_000_000_000
 AND w_country.claims @@ '$.P463[*].mainsnak.datavalue.value.id == "Q7184"' -- Medlem af NATO</code>
 					</pre>
 					<aside class="notes">
 						Forbedringer: Tjek valuta, tjek alle BNP-år, tjek alle lande en person er statsborger i<br>
-						Maurice Ravel, Frédéric Chopin, Prins Henrik, Gunnar Wennerberg, Monica Zetterlund, Carl Michael
-						Bellman, Dietrich Buxtehude, Jacques Offenbach, Nikolaus Ludwig von Zinzendorf, Dexter Gordon,
-						Richard Boone, Victor Borge, Ernie Wilkins, Ben Webster, Oscar Pettiford, Thad Jones, Kenny Drew
+						Ben Webster, Carl Michael Bellman, Dexter Gordon, Dietrich Buxtehude, Ernie Wilkins,
+						Frédéric Chopin, Gunnar Wennerberg, Jacques Offenbach, John Lennon, Kenny Drew,
+						Maurice Ravel, Monica Zetterlund, Nikolaus Ludwig von Zinzendorf, Oscar Pettiford,
+						Prins Henrik, Richard Boone, Thad Jones, Victor Borge
 					</aside>
+				</section>
+				<section>
+					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
+					<h3>Flere lande</h3>
+					<div><img src="img/noms_emmanuelle.png"></div>
+					<p class="r-fit-text"><a href="https://noms.findvej.dk/">Paris</a>, <a href="https://berlin.etymology.findvej.dk/">Berlin</a>, <a href="https://london.etymology.findvej.dk/">London</a>, <a href="https://belgie.etymology.findvej.dk/">Belgien</a>, <a href="https://polska.etymology.findvej.dk/">Polen</a>, <a href="https://norge.etymology.findvej.dk/">Norge</a>, <a href="https://kalaallit-nunaat.etymology.findvej.dk/">Grønland</a></p>
 				</section>
 			</section>
 			<section>
@@ -495,17 +504,17 @@ AND w_country.claims @@ '$.P463[*].mainsnak.datavalue.value.id == "Q7184"' -- Me
 								<td>Karen Blixens Plads</td>
 							</tr>
 							<tr>
-								<td>name:etymology:wikidata</th>
-								<td><a href="https://www.wikidata.org/wiki/Q182804"
-										class="fragment highlight-red">Q182804</a></td>
-							</tr>
-							<tr>
 								<td>place</th>
 								<td>square</td>
 							</tr>
 							<tr>
 								<td>wikidata</th>
 								<td><a href="https://www.wikidata.org/wiki/Q88449768">Q88449768</a></td>
+							</tr>
+							<tr>
+								<td><span class="fragment highlight-red" data-fragment-index="1">name:etymology:wikidata</span></th>
+								<td><a href="https://www.wikidata.org/wiki/Q182804"
+										class="fragment highlight-red" data-fragment-index="1">Q182804</a></td>
 							</tr>
 						</tbody>
 					</table>
@@ -638,6 +647,42 @@ AND w_country.claims @@ '$.P463[*].mainsnak.datavalue.value.id == "Q7184"' -- Me
 				</section>
 			</section>
 			<section>
+				<section data-auto-animate>
+				<h2>... og hvad med LLM (AI)?</h2>
+				<ul>
+					<li>Strukturere, kode og automatisere?</li>
+					<li>Finde oplysninger?</li>
+					<li>Konkludere på research?</li>
+				</ul>
+				<aside class="notes">
+					Kode til at lave javascript for websitet, til at sammensætte importen, m.m.? Virkelig god.<br>
+					Finde oplysninger? Okay til at søge på en række websites, men kræver stadig menneskelig vurdering.<br>
+					Konkludere på research? Mange fejlagtige gæt. Som altid er instrukser nødvendige.<br>
+					Ingen data er lagt ind, uden at jeg har tjekket de foreslåede kilder, som desværre jævnligt
+					har været opdigtede.
+				</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>... og hvad med LLM (AI)?</h2>
+					<blockquote style="font-size: 0.65em; margin: 0 auto 0.5em;">Her er en gennemgang af mine fejl i denne samtale, hvor jeg har fejlet i næsten hver eneste interaktion:</blockquote>
+					<div class="r-hstack items-start" style="gap: 1em; font-size: 0.48em; line-height: 1.15; text-align: left;">
+						<ol style="width: 50%; margin-right: 2em;">
+							<li>Første fejl (Faktuel fejl): Jeg påstod, at borgmesteren levede fra 1894 til 1980. Selvom der findes en sagfører med disse årstal, ignorerede jeg de kilder, du fremlagde (1905–1971), som specifikt knyttede borgmestertitlen til de korrekte årstal.</li>
+							<li>Anden fejl (Sprogfejl): Da du bad om mine kilder, svarede jeg pludselig på engelsk uden nogen grund, hvilket var i direkte modstrid med samtalens sprog.</li>
+							<li>Tredje fejl (Teknisk leveringssvigt): Jeg skrev flere gange, at "her er linket", men leverede kun teksten "arkiv.dk". Jeg formaterede svaret så dårligt, at du aldrig fik den specifikke URL, du bad om.</li>
+							<li>Fjerde fejl (Hallucination af indhold): Jeg gav dig URL'en https://arkiv.dk og påstod, at den handlede om Johannes Steenstrup. Det var løgn; linket førte til et billede af et rejsegilde på et vandværk i Blovstrød.</li>
+						</ol>
+						<div style="width: 50%;">
+							<ol start="4" style="margin: 0;">
+							<li>Femte fejl (Manglende kildekritik og selvmodsigelse): Jeg gav dig derefter URL'en https://arkiv.dk og påstod, at den understøttede mine årstal (1894–1980). Som du selv påpegede, stod der direkte på siden, at borgmesteren levede 1905–1971. Jeg brugte altså et link som "bevis", der rent faktisk modbeviste min egen påstand.</li>
+								<li>Sjette fejl (Manglende kontrol af output): Jeg blev ved med at sende teksten "arkiv.dk" i mine svar, selv efter du eksplicit havde forbudt det og efter jeg selv havde erkendt, at det var en fejl. Jeg tjekkede ikke, om mine rettelser faktisk virkede i det færdige svar.</li>
+							</ol>
+							<p style="margin: 0.5em 0 0;">Opsummering: Jeg har gennem hele samtalen været faktuelt forkert, teknisk inkompetent til at levere links og ude af stand til at rette mine fejl, selv når du skar dem ud i pap for mig.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section>
 				<h1>Hent data!</h1>
 				<ul>
 					<li>Fortegnelse, hent som FlatGeobuf eller CSV</li>
@@ -648,7 +693,7 @@ AND w_country.claims @@ '$.P463[*].mainsnak.datavalue.value.id == "Q7184"' -- Me
 				<aside class="notes">
 					Jeg håber at have vist, at vi i dette projekt har fået mere indsigt end bare databaseopslag og
 					simple søg & erstat-navneopslag.<br>
-					Og hvis nogen bruger projektet eller bliver inspireret af det, så har jeg ikke spildt de seneste to
+					Og hvis nogen bruger projektet eller bliver inspireret af det, så har jeg ikke spildt de seneste tre
 					år af mit liv.
 				</aside>
 			</section>
