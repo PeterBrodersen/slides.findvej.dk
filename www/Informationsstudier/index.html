@@ -114,7 +114,7 @@
 					<h3>Medier</h3>
 					<ul>
 						<li>Offentlige websider</li>
-						<li>Filer til download</li>
+						<li>Statiske filer til download</li>
 						<li>API til rådighed</li>
 					</ul>
 					<aside class="notes">
@@ -128,8 +128,7 @@
 					<h1 class="r-fit-text">Åbne data og offentlige API'er</h1>
 					<h3>Datakvalitet?</h3>
 					<div class="r-stretch">
-						<img src="img/letters_success.jpg"
-							alt="Bogstaver sat forkert i skumgummi-legeplade">
+						<img src="img/letters_success.jpg" alt="Bogstaver sat forkert i skumgummi-legeplade">
 					</div>
 					<aside class="notes">
 						Pixeleret, i lighed med kaserner m.m.<br>
@@ -172,6 +171,7 @@
 						</li>
 					</ul>
 					<aside class="notes">
+						Vejdata: Også kantsten, kloakdæksler!<br>
 						Ejendomsdata: BBR, geometri, m.m.<br>
 						Højdekort: Danmark bliver laserscannet regelmæssigt.<br>
 						Støjkort: Miljøstyrelsen.<br>
@@ -242,7 +242,8 @@
 							Nationalmuseet, CC BY-SA 3.0</a>
 					</p>
 					<aside class="notes">
-						2011, Wikipedia Loves Nationalmuseet. Vi fik lov til at tage billeder med stativ, m.m.
+						2011, Wikipedia Loves Nationalmuseet. Vi fik lov til at tage billeder med stativ, m.m.<br>
+						Vi kommer til at tale mere om Wikipedia senere.
 					</aside>
 				</section>
 
@@ -254,7 +255,9 @@
 						<a href="https://developer.sallinggroup.dev/">Salling Group developer portal</a>
 					</p>
 					<aside class="notes">
-						2011, Wikipedia Loves Nationalmuseet. Vi fik lov til at tage billeder med stativ, m.m.
+						Salling Group har et meget omfattende API med oplysninger om produkter, priser,
+						produkter købt sammen, butikker, feriedage, m.m.<br>
+						Både direkte
 					</aside>
 				</section>
 
@@ -267,26 +270,52 @@
 
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Historisk gennemgang af åbne geodata</h1>
-
-					<a href="https://web.archive.org/web/20050804160614/http://www.kms.dk/C1256ADF004C9677/(AllDocsByDocId)/F1266FCEBB3F6AFCC1256C700037726C"
-						class="r-stretch">
-						<img src="img/KMS.png" alt="Kort- og Matrikelstyrelsen, gammelt website">
-
-					</a>
+					<h3>Kort- og Matrikelstyrelsen</h3>
+					<div class="r-stretch fragment">
+						<a
+							href="https://web.archive.org/web/20050804160614/http://www.kms.dk/C1256ADF004C9677/(AllDocsByDocId)/F1266FCEBB3F6AFCC1256C700037726C">
+							<img src="img/KMS.png" alt="Kort- og Matrikelstyrelsen, gammelt website">
+						</a>
+					</div>
 					<aside class="notes">
-						Pixeleret, i lighed med kaserner m.m.<br>
-						Ikke bare et website, men også API til automatisk at hente skråfotos
-						ud fra fx koordinater. Metadata for position, kameravinkel, m.m.
+						Jeg vil hente data i 2002. Det kan lade sig gøre. Indtil 2005, hvor de blev fjernet.
 					</aside>
 				</section>
 
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Historisk gennemgang af åbne geodata</h1>
 					<h3>Kort- og Matrikelstyrelsen</h3>
-					<p>Data tilgængelig</p>
-					<p>Data fjernet</p>
+					<ul>
+						<li>Data, der var frit, er nu fjernet</li>
+						<li>Styrelser skulle være selvfinansierende</li>
+						<li class="fragment">… men heldigvis findes der data-hoarders!</li>
+					</ul>
 					<aside class="notes">
-						Skal styrelser være selvfinansierende?
+						Christian Schmidt (aggemam.dk) gemte alle adressedata. Det var før cloud-tjenester som
+						Google Drive, Dropbox, OneDrive, GMail, m.m. Og vores harddisks var ikke
+						altid lige gode.<br>
+						Findvej kunne aldrig været kommet i luften uden Christians hjælp.<br>
+						Styrelser begynder at fakturere hinanden!
+					</aside>
+				</section>
+
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Historisk gennemgang af åbne geodata</h1>
+					<h3>Flirt med åbne data</h3>
+					<ul class="fragment">
+						<li>Data må ikke konkurrere med virksomheder</li>
+						<li>Data må ikke overtræde nogens privatliv, m.m.</li>
+					</ul>
+					<div class="fragment" style="margin-top: 2rem;">Find Fisken!</div>
+					<aside class="notes">
+						Slutningen af 2000'erne<br>
+						IT- og Telestyrelsen, under Videnskabsministeriet<br>
+						Må det offentlige konkurrere med private virksomheder
+						om at skabe data? Er det en del af vores digitale infrastruktur,
+						som skal være åben, eller er det blot en opgave for de virksomheder,
+						som har lyst?<br>
+						Miljødata laver ingen af egen fri vilje, og fisk har ikke rettigheder.<br>
+						Registrering og sporing af fisk.
 					</aside>
 				</section>
 
@@ -306,6 +335,7 @@
 						Positivt at se, at partier kan være konstruktive og blive enige.<br>
 						Partier havde forskellige forbehold (fx privatliv, eksisterende virksomheders
 						økonomi og forretning, m.m.)<br>
+						GeoDanmark-data: Standardiseret data på tværs af kommuner<br>
 						Nye virksomheder: Septima!
 					</aside>
 				</section>
@@ -344,27 +374,57 @@
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Historisk gennemgang af åbne geodata</h1>
 					<h3>Workshop om erhvervsdata</h3>
-					<div class="fragment">
-					<p>Erhvervsstyrelsen inviterede myndigheder, virksomheder, journalister, græsrodsfolk til workshop
-						19. december 2013.</p>
-					<p>Ingen ku' li' datamonopolister!</p>
-					<p>Staten fik dokumenteret ønske og behov fra erhvervslivet.</p>
-					<p>Regnskabsdata blev frit tilgængelige i 2015<span class="fragment fade-up">-ish.</span></p>
-					</div>
+					<ul class="fragment">
+						<li>Ingen ku' li' data-monopolister!</li>
+						<li>Staten fik dokumenteret ønske og behov fra erhvervslivet.</li>
+						<li>Regnskabsdata blev frit tilgængelige i 2015<span class="fragment fade-up">-ish.</span></li>
+					</ul>
+					<aside class="notes">
+						Erhvervsstyrelsen inviterede myndigheder, virksomheder, journalister, græsrodsfolk til
+						workshop 19. december 2013.<br>
+						Mulighed for at hente løs. XBRL er struktueret data, så man kan hente
+						præcise tal, udgifter, indtægter, samt prosatekst som årsberetninger.
+					</aside>
 				</section>
 
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Historisk gennemgang af åbne geodata</h1>
-					<h3>2011: Lov om Grunddata</h3>
-					<p>Ortofotos (luftfotos)</p>
-					<p>Skråfotos</p>
-					<p>Vej- og adressedata</p>
-					<p>Fri licens</p>
+					<h3>Adressedata</h3>
+					<ul class="fragment" data-fragment-index="0">
+						<li><span style="position: relative; display: inline-block;">DAWA (Danmarks Adressers Web
+								API)<del class="fragment" data-fragment-index="1"
+									style="position: absolute; inset: 0; white-space: nowrap;">DAWA (Danmarks Adressers
+									Web API)</del></span></li>
+						<li>Adressevælger</li>
+						<li>Datafordeler</li>
+					</ul>
 					<aside class="notes">
+						Mange løsninger har eksisteret og er udskiftet løbende.<br>
+						Nogle kræver login. Nogle kræver tokens. Nogle kræver login med MitID.<br>
+						Hindren for automatisering og deling af kode, hvis hver bruger skal
+						oprette sig i nye systemer.<br>
+						Ingen systemer varer evigt. Men en del offentlige systemer har
+						offentlige GitHub-repos.
 					</aside>
 				</section>
-			</section>
 
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Historisk gennemgang af åbne geodata</h1>
+					<h3>Vibe Coding to the rescue!</h3>
+					<ul>
+						<li><a href="https://dawakit.dk/">DAWA Kit</a></li>
+						<li><a href="https://danadresse.dk/dawa-lukker-hvad-goer-du">Danadresse</a></li>
+						<li><a href="https://dawa.companydata.dk/">Companydata</a></li>
+						<li><a href="https://danskadresseapi.dk/dawa-erstatning">DanskAdresseAPI</a></li>
+						<li>…</li>
+					</ul>
+					<aside class="notes">
+						Beregnet til en hurtig drop-in-replacement.<br>
+						Private aktører, men hvor stabile er de? Hvad sker der, hvis de lukker ned?
+					</aside>
+				</section>
+
+			</section>
 
 			<section>
 				<section data-auto-animate>
@@ -373,7 +433,7 @@
 						<a href="https://navne.findvej.dk/">navne.findvej.dk</a>
 					</h3>
 					<aside class="notes">
-						Mit website.
+						Mit website. Jeg begyndte på projektet med at indsamle data i 2023.
 					</aside>
 				</section>
 				<section data-auto-animate>
@@ -383,10 +443,10 @@
 					</div>
 					<aside class="notes">
 						Samler OpenStreetMap- og Wikidata.<br>
-						PostgreSQL som database.<br>
+						PostgreSQL som database, PostGIS.<br>
 						Kode på GitHub.<br>
-						Tidligere kollega Sofie (nu KDS), legedag hos Septima i 2021. Gav mig lyst til at kigge nærmere
-						på data.
+						Legedag hos Septima i 2021. Tidligere kollega Sofie (nu KDS) lavede kort over København.
+						Gav mig lyst til at kigge nærmere på data et par år senere.
 					</aside>
 				</section>
 				<section data-auto-animate>
@@ -410,9 +470,9 @@
 				</section>
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Case: Vejnavneprojektet</h1>
-					<h3>Data for over 45.000 veje</h3>
+					<h3>Data for over 50.000 veje</h3>
 					<div class="r-stretch">
-						<img src="img/Danmark.png">
+						<img src="img/Danmark.png" style="border: 1px solid black;">
 					</div>
 					<aside class="notes">
 						Ca. 110.000 veje i Danmark<br>
@@ -420,9 +480,23 @@
 						Behøver ikke at være begrænset til Danmark.
 					</aside>
 				</section>
+
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Case: Vejnavneprojektet</h1>
-					<h3><a href="https://navne.findvej.dk/kommuner/">Opslag på kommuneniveau</a></h3>
+					<h3>Flere lande</h3>
+					<div><img src="img/noms_emmanuelle.png"></div>
+					<p class="r-fit-text"><a href="https://noms.findvej.dk/">Paris</a>, <a
+							href="https://berlin.etymology.findvej.dk/">Berlin</a>, <a
+							href="https://london.etymology.findvej.dk/">London</a>, <a
+							href="https://belgie.etymology.findvej.dk/">Belgien</a>, <a
+							href="https://polska.etymology.findvej.dk/">Polen</a>, <a
+							href="https://norge.etymology.findvej.dk/">Norge</a>, <a
+							href="https://kalaallit-nunaat.etymology.findvej.dk/">Grønland</a></p>
+				</section>
+
+				<section data-auto-animate>
+					<h1 class="r-fit-text">Case: Vejnavneprojektet</h1>
+					<h3><a href="https://navne.findvej.dk/areas/">Opslag på kommuneniveau</a></h3>
 					<div class="r-stretch"><img src="img/kommuner_oversigt.png"></div>
 					<aside class="notes">
 						Forskel mellem om det har været eksisterende personer eller mytologiske personer.<br>
@@ -493,6 +567,7 @@
 						<img src="img/afstand_til_ophav.png">
 					</div>
 					<aside class="notes">
+						DBeaver, SQL-opslag.<br>
 						Vi har koordinat på vejen og på ophavet (når det er geografisk)<br>
 						Samoavej: Fjernest sted på Jorden fra ophavet<br>
 						Vi kunne også beregne til astronomiske objekter<br>
@@ -502,16 +577,18 @@
 				</section>
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
-					<h3 class="r-fit-text">Undgå veje opkaldt efter mænd</h3>
+					<h3 class="r-fit-text">Undgå veje opkaldt efter mænd eller kvinder</h3>
 					<div class="r-stretch">
 						<a
 							href="https://osrm.findvej.dk/nomales/?z=16&center=55.667353%2C12.537096&loc=55.665580%2C12.529242&loc=55.665435%2C12.530379&hl=da&alt=0&scale=metric&ly=openstreetmap.org&profile=0"><img
 								src="img/osrm_undgå_mænd.png"></a>
 					</div>
 					<aside class="notes">
+						LIVE DEMO<br>
 						OSRM, Open Source Routing Machine<br>
 						Brugerdefineret routing-profil<br>
-						Ruteplanlægger, der fortæller om den vej, man kører på, med
+						Filter på linje med motorveje, færger, betalingsveje<br>
+						Idé: Ruteplanlægger, der fortæller om den vej, man kører på, med
 						fortællingen tilpasset den beregnede tid, man bruger på vejstykket
 					</aside>
 				</section>
@@ -521,11 +598,11 @@
 					<table class="fragment" style="font-size: 0.6em;">
 						<tr>
 							<td>Kvinder med veje opkaldt efter sig</td>
-							<td>470 kvinder</td>
+							<td>545 kvinder</td>
 						</tr>
 						<tr>
 							<td>Mænd med veje opkaldt efter sig</td>
-							<td>3.005 mænd</td>
+							<td>3.427 mænd</td>
 						</tr>
 						<tr>
 							<td>Forhold mellem kvinder og mænd</td>
@@ -611,7 +688,7 @@
 				</section>
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
-					<p>Flere vilkårlige strukturerede opslag</p>
+					<p class="r-fit-text">Flere strukturerede opslag til at stille nysgerrigheden</p>
 					<table class="fragment" style="font-size: 0.6em;">
 						<tr>
 							<td>Lærkevej, fugl eller træ?</td>
@@ -648,7 +725,7 @@ INNER JOIN wikidata w_country ON w.claims->'P27'->0->'mainsnak'->'datavalue'->'v
 CROSS JOIN LATERAL jsonb_array_elements(COALESCE(w.claims->'P106', '[]'::jsonb)) AS c(claim)
 INNER JOIN wikidata w_profession ON c.claim->'mainsnak'->'datavalue'->'value'->>'id' = w_profession.itemid
 WHERE l.featuretype IN('way','square')
--- Musiker eller profession, som er "musical occupation" eller "musikalsk profession"
+-- Musiker eller profession, som er "musical occupation" eller "musical profession"
 AND (
 	w_profession.claims @@ '$.P31[*].mainsnak.datavalue.value.id == "Q66715801"'
 	OR w_profession.claims @@ '$.P31[*].mainsnak.datavalue.value.id == "Q135106813"'
@@ -665,22 +742,18 @@ AND w_country.claims @@ '$.P463[*].mainsnak.datavalue.value.id == "Q7184"' -- Me
 						Richard Boone, Thad Jones, Victor Borge
 					</aside>
 				</section>
-				<section>
-					<h1 class="r-fit-text">Muligheder med struktureret data</h1>
-					<h3>Flere lande</h3>
-					<div><img src="img/noms_emmanuelle.png"></div>
-					<p class="r-fit-text"><a href="https://noms.findvej.dk/">Paris</a>, <a
-							href="https://berlin.etymology.findvej.dk/">Berlin</a>, <a
-							href="https://london.etymology.findvej.dk/">London</a>, <a
-							href="https://belgie.etymology.findvej.dk/">Belgien</a>, <a
-							href="https://polska.etymology.findvej.dk/">Polen</a>, <a
-							href="https://norge.etymology.findvej.dk/">Norge</a>, <a
-							href="https://kalaallit-nunaat.etymology.findvej.dk/">Grønland</a></p>
-				</section>
 			</section>
 			<section>
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Etymologi i OpenStreetMap</h1>
+					<aside class="notes">
+						Etymologi er blot et dyrt ord for, hvad noget er opkaldt efter.<br>
+						Hvad er fænomener opkaldt efter.<br>
+						Ikke kun, hvor ord stammer fra. Kan også bruges om steder.<br>
+						Etymologi for etymologi:<br>
+						étymon (græsk for "den sande betydning")<br>
+						-logia (græsk for studiet af …)
+					</aside>
 				</section>
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Etymologi i OpenStreetMap</h1>
@@ -758,6 +831,7 @@ AND w_country.claims @@ '$.P463[*].mainsnak.datavalue.value.id == "Q7184"' -- Me
 						Referencer fra OpenStreetMap-værdier til Wikidata-emner
 					</aside>
 				</section>
+
 				<section data-auto-animate>
 					<h1 class="r-fit-text">Etymologi i OpenStreetMap</h1>
 					<h3>Wikidata</h3>
@@ -807,7 +881,8 @@ AND w_country.claims @@ '$.P463[*].mainsnak.datavalue.value.id == "Q7184"' -- Me
 						</tr>
 					</table>
 					<aside class="notes">
-						Wikidata: Uafhængige, strukturerede stamdata<br>
+						Wikidata: Den anden del af løsningen.<br>
+						Uafhængige, strukturerede stamdata<br>
 						Den "strukturerede" del af Wikipedia, fx befolkningstal<br>
 						Henviser til øvrige emner; sjældent prosatekst<br>
 						Tilsvarende opbygning med key-value<br>
@@ -817,6 +892,10 @@ AND w_country.claims @@ '$.P463[*].mainsnak.datavalue.value.id == "Q7184"' -- Me
 				</section>
 			</section>
 			<section>
+				<section data-auto-animate>
+					<h3>Datagrundlag</h3>
+				</section>
+
 				<section data-auto-animate>
 					<h3>Datagrundlag</h3>
 					<div id="bibliotekscollage-frame" style="--zoom-duration: 15000ms;">
@@ -885,23 +964,26 @@ AND w_country.claims @@ '$.P463[*].mainsnak.datavalue.value.id == "Q7184"' -- Me
 			</section>
 			<section>
 				<section data-auto-animate>
-					<h2>... og hvad med LLM (AI)?</h2>
+					<h2>... og hvad med AI og LLM?</h2>
 					<ul>
-						<li>Strukturere, kode og automatisere?</li>
-						<li>Finde oplysninger?</li>
-						<li>Konkludere på research?</li>
+						<li class="fragment">Strukturere, kode og automatisere?</li>
+						<li class="fragment">Finde oplysninger?</li>
+						<li class="fragment">Konkludere på research?</li>
 					</ul>
 					<aside class="notes">
 						Kode til at lave javascript for websitet, til at sammensætte importen, m.m.? Virkelig god.<br>
 						Finde oplysninger? Okay til at søge på en række websites, men kræver stadig menneskelig
 						vurdering.<br>
-						Konkludere på research? Mange fejlagtige gæt. Som altid er instrukser nødvendige.<br>
+						Konkludere på research? Mange fejlagtige gæt. Som altid er instrukser nødvendige.
+						Det er svært at komme ud over pleaser-funktionaliteten i mange chatbots, der hellere vil
+						give et svar eller bekræfte dig end at erkende, at den helt rimeligt nok ikke kan finde
+						den ønskede information.<br>
 						Ingen data er lagt ind, uden at jeg har tjekket de foreslåede kilder, som desværre jævnligt
 						har været opdigtede.
 					</aside>
 				</section>
 				<section data-auto-animate>
-					<h2>... og hvad med LLM (AI)?</h2>
+					<h2>... og hvad med AI og LLM?</h2>
 					<blockquote style="font-size: 0.65em; margin: 0 auto 0.5em;">Her er en gennemgang af mine fejl i
 						denne samtale, hvor jeg har fejlet i næsten hver eneste interaktion:</blockquote>
 					<div class="r-hstack items-start"
@@ -920,7 +1002,7 @@ AND w_country.claims @@ '$.P463[*].mainsnak.datavalue.value.id == "Q7184"' -- Me
 								rejsegilde på et vandværk i Blovstrød.</li>
 						</ol>
 						<div style="width: 50%;">
-							<ol start="4" style="margin: 0;">
+							<ol start="5" style="margin: 0;">
 								<li>Femte fejl (Manglende kildekritik og selvmodsigelse): Jeg gav dig derefter URL'en
 									https://arkiv.dk og påstod, at den understøttede mine årstal (1894–1980). Som du
 									selv påpegede, stod der direkte på siden, at borgmesteren levede 1905–1971. Jeg
@@ -935,10 +1017,22 @@ AND w_country.claims @@ '$.P463[*].mainsnak.datavalue.value.id == "Q7184"' -- Me
 								selv når du skar dem ud i pap for mig.</p>
 						</div>
 					</div>
+					<aside class="notes">
+						Google AI er ekstra slem.<br>
+						For kode og databasearbejde: Brug en agent, som selv kan teste.<br>
+						Meat proxy-begrebet.<br>
+						Chats i fx ChatGPT og standard Copilot-app gør, at du ender med at blive en
+						omvendt meat proxy.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>... og hvad med AI og LLM?</h2>
+					<div>Men den del har I styr på.</div>
 				</section>
 			</section>
+
 			<section>
-				<h1>Hent data!</h1>
+				<h1>Data er frie!</h1>
 				<ul>
 					<li>Fortegnelse, hent som FlatGeobuf eller CSV</li>
 					<li>OpenStreetMap, fri licens</li>
@@ -952,32 +1046,35 @@ AND w_country.claims @@ '$.P463[*].mainsnak.datavalue.value.id == "Q7184"' -- Me
 					år af mit liv.
 				</aside>
 			</section>
+
 			<section>
 				<blockquote>
 					Fred er at skabe
 				</blockquote>
 				<p>– Nordahl Grieg</p>
 			</section>
+
 			<section>
 				<h3>Spørgsmål?</h3>
 			</section>
+
 			<section>
 				<h3>Ressourcer</h3>
 				<ul>
 					<li><a href="https://navne.findvej.dk/">navne.findvej.dk</a> (Hvad er steder opkaldt efter?)
 						<ul>
-							<li><a href="https://navne.findvej.dk/kommuner/">Kønsfordeling på kommuneniveau</a></li>
+							<li><a href="https://navne.findvej.dk/areas/">Kønsfordeling på kommuneniveau</a></li>
 							<li><a href="https://osrm.findvej.dk/nomales/">Ruteplanlægger, der undgår veje opkaldt efter
-									mænd</a></li>
+									mænd og kvinder</a></li>
 							<li><a href="https://github.com/PeterBrodersen/osmetymology/blob/main/Resources.md">Kilder
 									og ressourcer</a></li>
-							<li><a href="https://github.com/PeterBrodersen/osmetymology">GitHub-projekt</a>
+							<li><a href="https://github.com/PeterBrodersen/osmetymology">GitHub-projekt</a></li>
 						</ul>
 					</li>
 					<li><a href="https://www.openstreetmap.org/">OpenStreetMap</a>
 						<ul>
-							<a href="https://mapcomplete.org/etymology.html">MapComplete</a>, online-værktøj til at
-							tilføje informationer om ophav til vejnavne
+							<li><a href="https://mapcomplete.org/etymology.html">MapComplete</a>, online-værktøj til at
+								tilføje informationer om ophav til vejnavne</li>
 						</ul>
 					</li>
 					<li><a href="https://www.wikidata.org/">Wikidata</a></li>
